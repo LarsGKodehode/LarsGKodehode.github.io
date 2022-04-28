@@ -1,0 +1,73 @@
+/* loaded background and fallbacks */
+body {
+  background-color: rgb(131, 165, 171);
+  margin: 0px;
+  color: black;
+  /* put variables here */
+  --frame-height: 80vh;
+  --frame-width: 80vw;
+  --number-display-rows: 1;
+}
+
+
+/* calculator frame */
+#frame {
+  border: 2px solid green; /* DEL when done */
+  height: var(--frame-height);
+  width: var(--frame-width);
+  padding: 5vh 5vw;
+  /*have to use longhand to select top and botom corners*/
+  border-top-left-radius: 10vh;
+  border-top-right-radius: 10vh;
+  border-bottom-right-radius: 10vh;
+  border-bottom-left-radius: 10vh;
+  margin: 3vh auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* display of calculator, possibly multiple lines */
+#display {
+  border: 2px solid green; /* DEL when done */
+  border-radius: 2rem;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  height: calc(var(--frame-height) * 1/5);
+}
+
+.display-row{
+  border: 2px solid green; /* DEL when done */
+}
+
+/* buttons to push, numbers and functions */
+#keyboard {
+  border: 2px solid green; /* DEL when done */
+  display: flex;
+  justify-content: right; /*right is usually closer to thumb, can't satisfy both rh an lf*/
+  height: calc(var(--frame-height) * 2/5);
+}
+
+.button {
+  border: 2px solid green; /* DEL when done */
+}
+
+#keyboard--section-functions {
+  border: 2px solid green; /* DEL when done */
+  
+}
+
+.functions {
+  border: 2px solid green; /* DEL when done */
+  
+}
+
+#keyboard-section-numbers {
+  border: 2px solid green; /* DEL when done */
+
+}
+
+.numbers {
+  border: 2px solid green; /* DEL when done */
+
+}

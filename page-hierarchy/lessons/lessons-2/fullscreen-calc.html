@@ -1,0 +1,51 @@
+<!-- template v0.1 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fullscreen Calc</title>
+
+    <link rel="stylesheet" href="./fullscreen-calc.css">
+
+    <link rel="icon" type="image/png" sizes="196x196" href="/content/icon/icon-default-196x196.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/content/icon/icon-apple-180x180.png">
+
+</head>
+
+<body>
+  <main id="frame">
+    <div id="display">
+      <!-- insert number of lines in display here -->
+      <div class="display-row"></div>
+    </div>
+    <div id="keyboard">
+      <span id="keyboard--section-functions">
+        <!-- insert function buttons here -->
+        <input class="button functions" type="button" value="=">
+        <input class="button functions" type="button" value="+">
+        <input class="button functions" type="button" value="-">
+      </span>
+      <span id="keyboard-section-numbers">
+        <!-- insert number buttons here -->
+        <input class="button numbers" type="button" value="0">
+        <input class="button numbers" type="button" value="1">
+        <input class="button numbers" type="button" value="2">
+        <input class="button numbers" type="button" value="3">
+        <input class="button numbers" type="button" value="4">
+        <input class="button numbers" type="button" value="5">
+        <input class="button numbers" type="button" value="6">
+        <input class="button numbers" type="button" value="7">
+        <input class="button numbers" type="button" value="8">
+        <input class="button numbers" type="button" value="9">
+      </span>
+    </div>
+  </main>
+  <script src="./fullscreen-calc.js"></script>
+</body>
+
+</html>

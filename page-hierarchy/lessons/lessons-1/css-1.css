@@ -2,21 +2,23 @@
 body {
   background-color: rgba(73,54,46);
   color: bisque;
-  margin: 0px 0px;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  width: 100%;
+  height: 25vh;
 
   /* some variables for page wide stuff, only one instance, not needed */
   --page-banner-max-height: 500px
 }
 
+
+/* TODO: fix gap up top */
 header {
   background-image: url(/content/img/wood-panel-dark-brown.jpg);
-  /*see https://developer.mozilla.org/en-US/docs/Web/CSS/position_value
-  essentialy specifying position puts the element into it's own z-level*/
-  width: 100%;
-  height: 100vw;
-  margin-top: 0px;
+  /* margin-top: 0px; */
   max-height: var(--page-banner-max-height);
-  object-fit: cover;
+  object-fit: fill;
 }
 
 #page-heading {
@@ -35,10 +37,11 @@ header {
 
 .content-deck {
   border: 3px solid green;
-  margin: 10%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;;
+  margin: 10%;
 }
 
 .text-section {

@@ -1,0 +1,41 @@
+:root {
+  /* dark theme */
+  --standard-background-color-dark-theme: darkgoldenrod;
+  --standard-color-dark-theme: black;
+  /* TODO: bright theme */
+}
+
+/* link standards, order sensitive hover: after link, visited. active: after hover*/
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: gray;
+}
+
+/* dark background */
+a.bg-dark:link {
+  color: black;
+}
+
+a.bg-dark:visited {
+  color: rgb(120, 120, 120);
+}
+
+a.bg-dark:hover {
+  font-size: 125%;
+}
+
+/* bright background */
+a.bg-bright:link {
+  color: black;
+}
+
+a.bg-bright:visited {
+  color: rgb(120, 120, 120);
+}
+
+a.bg-bright:hover {
+  font-size: 125%;
+}

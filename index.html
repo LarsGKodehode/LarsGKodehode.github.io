@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- hints at page language for SEO and accessabilty features. list ISO 639-1 https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes -->
+<html lang="en">
+
+<!-- meta section -->
+
+<head>
+    <!-- always define charset, use utf-8 except if you are special, free ranging browsers are troublesome -->
+    <meta charset="utf-8">
+
+    <!-- TODO: why? SEO? https://www.w3schools.com/tags/tag_meta.asp -->
+    <!-- microsoft specific stuff? -->
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <!-- seems fine, necessary? -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- title for browser window. defaults to path -->
+    <title>test-project-index</title>
+
+    <!-- links to .css and applies styling. supports multiple, last tramples 
+        first -->
+        <link rel="stylesheet" href="/css/page-standards.css">
+        <link rel="stylesheet" href="/css/base.css">
+        <link rel="stylesheet" href="/css/homepage-specific.css">
+
+    <!--
+    favicon: discrepancy between browser vendors and devices, HTML5 spec still in talks. https://stackoverflow.com/questions/23849377/html-5-favicon-support
+    -->
+
+    <!-- TODO: check if .svg has broad enough support -->
+    <!-- 196x196 should be sufficient, check https://www.w3schools.com/html/html_favicon.asp for supported formats, browser probably looks for best fit among multiple -->
+    <link rel="icon" type="image/png" sizes="196x196" href="/content/icon/icon-default-196x196.png">
+
+    <!-- tactile apples needs special treatment -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/content/icon/icon-apple-180x180.png">
+
+    <!-- jurassic microsoft, IE < 9 -->
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <!-- TODO: windows phones got some homemade brew, popular enough to care? -->
+</head>
+
+<!-- page layout and content -->
+<body>
+  <!-- header is for introduction or navigational tools -->
+    <header id="nav-bar-base">
+        <div class="nav-bar-video-container">
+            <video class="hosted-video video-nav-bar-background" autoplay muted loop
+            src="/content/video/top-banner-helix.mp4"></video>
+        </div>
+        <!-- nav element describes groups of internal or external links -->
+        <nav class="nav-bar-content-container">
+            <div id="nav-bar-hompage-link">
+                <a class="logo-link" href="/index.html">
+                    <img class="logo-default" src="/content/logo-default.png" alt="To frontpage"></a>
+            </div>
+            <ul id="nav-bar-menu-links">
+                <li><a href="/page-hierarchy/lessons/lessons-1/css-1.html">Lessons-1</a></li>
+                <li><a href="/index.html">Homepage 2</a></li>
+                <li><a href="/index.html">Homepage 3</a></li>
+                <li><a href="/index.html">Homepage 4</a></li>
+                <li><a href="/index.html">Homepage 5</a></li>
+                <li><a href="/index.html">Homepage 6</a></li>
+                <li><a href="/index.html">Homepage 7</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- TODO: design content -->
+    <!-- part of site containing actual content -->
+    <main>
+        <div id="content-base">
+            <h1>TODO: define general layout for content section</h1>
+            <!-- section suggests grouped content -->
+            <section class="content-element-deck">
+                <div class="content-element-card">
+                  <!-- article used for content that can stand alone -->
+                  <article class="text-section">
+                    <h2>Card 1</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu risus semper, sodales ante ut, lacinia mi.
+                        Nullam rutrum risus eros, vel vehicula lectus facilisis et. Aenean ultrices, felis quis eleifend
+                        consectetur,
+                        purus orci aliquet mauris, vel volutpat turpis orci sed dolor. Proin pulvinar consequat bibendum. Integer
+                        lobortis ultrices massa a ultricies. Proin mattis ante eu rutrum iaculis. Praesent a hendrerit velit, id
+                        venenatis sapien. Duis ante libero, ornare et diam eget, lobortis ornare felis. Ut ac nulla non risus auctor
+                        viverra quis sed turpis. Vestibulum suscipit imperdiet pharetra. Fusce placerat consectetur ex sit amet
+                        pulvinar. In viverra lacus nec libero congue suscipit. Nunc vestibulum, purus sit amet sagittis finibus,
+                        augue
+                        eros aliquet risus, ut commodo tellus ipsum sit amet risus.
+                    </p>
+                </article>
+                </div>
+                <div class="content-element-card">
+                  <article class="text-section">
+                    <h2>Card 2</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu risus semper, sodales ante ut, lacinia mi.
+                        Nullam rutrum risus eros, vel vehicula lectus facilisis et. Aenean ultrices, felis quis eleifend
+                        consectetur,
+                        purus orci aliquet mauris, vel volutpat turpis orci sed dolor. Proin pulvinar consequat bibendum. Integer
+                        lobortis ultrices massa a ultricies. Proin mattis ante eu rutrum iaculis. Praesent a hendrerit velit, id
+                        venenatis sapien. Duis ante libero, ornare et diam eget, lobortis ornare felis. Ut ac nulla non risus auctor
+                        viverra quis sed turpis. Vestibulum suscipit imperdiet pharetra. Fusce placerat consectetur ex sit amet
+                        pulvinar. In viverra lacus nec libero congue suscipit. Nunc vestibulum, purus sit amet sagittis finibus,
+                        augue
+                        eros aliquet risus, ut commodo tellus ipsum sit amet risus.
+                    </p>
+                </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- bottom info bar with various always present not that important stuff -->
+    <footer id="footer-base">
+        <div class="footer-empty-space"></div>
+        <div class="footer-content-container">
+            <ul class="footer-contact-info">
+                <li>footer text, info, contact, social media shortcuts, etc.</li>
+                <li><a class="bg-dark" href="/page-hierarchy/about.html">About</a>
+                  <!-- contact info under here -->
+                <address id="contact-info">
+                      <li><a class="contact-info-links contact-info-links-website" href="/index.html">Website</a></li>
+                      <li><a class="contact-info-links contact-info-links-email" href="mailto:Lars.Gunnar.Kodehodet@gmail.com">Email</a></li>
+                </address>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

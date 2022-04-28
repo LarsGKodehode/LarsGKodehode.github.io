@@ -1,0 +1,281 @@
+<!-- template v0.1 -->
+
+<!--
+  files:
+    css-1.html
+    css-1.css
+  
+  showcases usage of basic html semantic tags, css classes, css selector patterns and ?flexbox?
+  for indepth documentation of semantic tags see https://www.w3schools.com/html/html5_semantic_elements.asp
+-->
+
+<!-- informs the browser of document standard -->
+<!DOCTYPE html>
+
+<!-- recommended to indicate page language -->
+<html lang="en">
+
+<!-- meta information for browser, is not rendered -->
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- links up external stylsheets -->
+  <link rel="stylesheet" href="/page-hierarchy/lessons/lessons-1/css-1.css">
+  
+  <!-- display title of webpage -->
+  <title>Lessons-1</title>
+
+  <!-- displays favicon -->
+  <link rel="icon" type="image/png" sizes="196x196" href="/content/icon/icon-default-196x196.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/content/icon/icon-apple-180x180.png">
+</head>
+
+<!-- indicates rendered content -->
+<body>
+  <!-- hints at introductionary content and/or nav links -->
+  <header>
+    <h1 id="page-heading">Lessons-1</h1>
+  </header>
+
+  <!-- actual content inside here -->
+  <main id="main">
+  <!-- segregation of segments -->
+    <!-- one blob -->
+    <section class="content-deck">
+      <div class="deck card">
+        <article class="text-section">
+          <h1>Lorem Ipsum</h1>
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+          "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+
+          <p>ipsum dolor sit amet, consectetur adipiscing elit. Mauris id lacinia lacus, vitae dapibus justo. Sed ac
+          urna at odio convallis sagittis pharetra et mi. Aenean nisi arcu, placerat ut tempus at, feugiat et nibh.
+          Maecenas quis leo nec odio laoreet placerat. Phasellus id est pharetra, mattis purus vel, mollis neque.
+          Maecenas eros massa, pulvinar sit amet ipsum eu, condimentum varius magna. Vestibulum ut odio ut enim
+          vulputate gravida.</p>
+
+          <p>Vestibulum facilisis suscipit massa ac ullamcorper. Morbi et mattis neque. Vestibulum mi dui, tincidunt sed
+          metus vitae, sagittis blandit neque. Aliquam erat volutpat. Morbi non justo quis mi efficitur mattis. Proin
+          ipsum nibh, mollis nec ante sit amet, pharetra faucibus libero. Aenean hendrerit imperdiet ante id convallis.
+          Cras ac ultricies nisi, quis sollicitudin mi.</p>
+
+          <p>Aliquam faucibus sapien nec justo tristique, tempus malesuada enim ullamcorper. Nullam ultricies quam libero,
+          non euismod tellus pellentesque vitae. Curabitur lorem lacus, interdum in nisl at, venenatis viverra nulla.
+          Nulla nibh odio, dictum at risus quis, dictum rutrum nunc. Curabitur scelerisque nunc enim, finibus aliquet
+          nunc vehicula eget. Nulla facilisi. Suspendisse quis cursus nulla. Mauris ac laoreet diam. Sed interdum
+          malesuada lacus, at efficitur quam congue ac. Quisque quis lorem sit amet nisi varius maximus ac vitae odio.
+          Nullam lacinia ac odio sit amet mollis. Ut volutpat posuere augue.</p>
+
+          <p>Cras nec est lectus. Ut facilisis dapibus consectetur. In sagittis dui condimentum finibus pretium. Morbi sed
+          sagittis sem, et semper mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, arcu eget
+          semper ultrices, lorem velit tincidunt tellus, vel tincidunt metus sapien sed orci. Class aptent taciti
+          sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+          <p>Morbi fringilla ipsum eget mauris ornare, eget dictum lectus scelerisque. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Sed laoreet magna aliquam sem ornare, facilisis malesuada ante scelerisque.
+          Suspendisse potenti. Aliquam erat volutpat. Aenean molestie auctor risus sit amet aliquet. Vestibulum faucibus
+          cursus enim at tincidunt. Morbi maximus varius ultrices. Proin vehicula hendrerit ex et porttitor. Vivamus eu
+          sapien non arcu aliquam molestie.</p>
+        </article>
+      </div>
+      <div class="deck card">
+        <article class="text-section">
+          <h1>Lorem Ipsum</h1>
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+          "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+
+          <p>ipsum dolor sit amet, consectetur adipiscing elit. Mauris id lacinia lacus, vitae dapibus justo. Sed ac
+          urna at odio convallis sagittis pharetra et mi. Aenean nisi arcu, placerat ut tempus at, feugiat et nibh.
+          Maecenas quis leo nec odio laoreet placerat. Phasellus id est pharetra, mattis purus vel, mollis neque.
+          Maecenas eros massa, pulvinar sit amet ipsum eu, condimentum varius magna. Vestibulum ut odio ut enim
+          vulputate gravida.</p>
+
+          <p>Vestibulum facilisis suscipit massa ac ullamcorper. Morbi et mattis neque. Vestibulum mi dui, tincidunt sed
+          metus vitae, sagittis blandit neque. Aliquam erat volutpat. Morbi non justo quis mi efficitur mattis. Proin
+          ipsum nibh, mollis nec ante sit amet, pharetra faucibus libero. Aenean hendrerit imperdiet ante id convallis.
+          Cras ac ultricies nisi, quis sollicitudin mi.</p>
+
+          <p>Aliquam faucibus sapien nec justo tristique, tempus malesuada enim ullamcorper. Nullam ultricies quam libero,
+          non euismod tellus pellentesque vitae. Curabitur lorem lacus, interdum in nisl at, venenatis viverra nulla.
+          Nulla nibh odio, dictum at risus quis, dictum rutrum nunc. Curabitur scelerisque nunc enim, finibus aliquet
+          nunc vehicula eget. Nulla facilisi. Suspendisse quis cursus nulla. Mauris ac laoreet diam. Sed interdum
+          malesuada lacus, at efficitur quam congue ac. Quisque quis lorem sit amet nisi varius maximus ac vitae odio.
+          Nullam lacinia ac odio sit amet mollis. Ut volutpat posuere augue.</p>
+
+          <p>Cras nec est lectus. Ut facilisis dapibus consectetur. In sagittis dui condimentum finibus pretium. Morbi sed
+          sagittis sem, et semper mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, arcu eget
+          semper ultrices, lorem velit tincidunt tellus, vel tincidunt metus sapien sed orci. Class aptent taciti
+          sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+          <p>Morbi fringilla ipsum eget mauris ornare, eget dictum lectus scelerisque. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Sed laoreet magna aliquam sem ornare, facilisis malesuada ante scelerisque.
+          Suspendisse potenti. Aliquam erat volutpat. Aenean molestie auctor risus sit amet aliquet. Vestibulum faucibus
+          cursus enim at tincidunt. Morbi maximus varius ultrices. Proin vehicula hendrerit ex et porttitor. Vivamus eu
+          sapien non arcu aliquam molestie.</p>
+        </article>
+      </div>
+      <div class="deck card">
+        <article class="text-section">
+          <h1>Lorem Ipsum</h1>
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+          "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+
+          <p>ipsum dolor sit amet, consectetur adipiscing elit. Mauris id lacinia lacus, vitae dapibus justo. Sed ac
+          urna at odio convallis sagittis pharetra et mi. Aenean nisi arcu, placerat ut tempus at, feugiat et nibh.
+          Maecenas quis leo nec odio laoreet placerat. Phasellus id est pharetra, mattis purus vel, mollis neque.
+          Maecenas eros massa, pulvinar sit amet ipsum eu, condimentum varius magna. Vestibulum ut odio ut enim
+          vulputate gravida.</p>
+
+          <p>Vestibulum facilisis suscipit massa ac ullamcorper. Morbi et mattis neque. Vestibulum mi dui, tincidunt sed
+          metus vitae, sagittis blandit neque. Aliquam erat volutpat. Morbi non justo quis mi efficitur mattis. Proin
+          ipsum nibh, mollis nec ante sit amet, pharetra faucibus libero. Aenean hendrerit imperdiet ante id convallis.
+          Cras ac ultricies nisi, quis sollicitudin mi.</p>
+
+          <p>Aliquam faucibus sapien nec justo tristique, tempus malesuada enim ullamcorper. Nullam ultricies quam libero,
+          non euismod tellus pellentesque vitae. Curabitur lorem lacus, interdum in nisl at, venenatis viverra nulla.
+          Nulla nibh odio, dictum at risus quis, dictum rutrum nunc. Curabitur scelerisque nunc enim, finibus aliquet
+          nunc vehicula eget. Nulla facilisi. Suspendisse quis cursus nulla. Mauris ac laoreet diam. Sed interdum
+          malesuada lacus, at efficitur quam congue ac. Quisque quis lorem sit amet nisi varius maximus ac vitae odio.
+          Nullam lacinia ac odio sit amet mollis. Ut volutpat posuere augue.</p>
+
+          <p>Cras nec est lectus. Ut facilisis dapibus consectetur. In sagittis dui condimentum finibus pretium. Morbi sed
+          sagittis sem, et semper mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, arcu eget
+          semper ultrices, lorem velit tincidunt tellus, vel tincidunt metus sapien sed orci. Class aptent taciti
+          sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+          <p>Morbi fringilla ipsum eget mauris ornare, eget dictum lectus scelerisque. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Sed laoreet magna aliquam sem ornare, facilisis malesuada ante scelerisque.
+          Suspendisse potenti. Aliquam erat volutpat. Aenean molestie auctor risus sit amet aliquet. Vestibulum faucibus
+          cursus enim at tincidunt. Morbi maximus varius ultrices. Proin vehicula hendrerit ex et porttitor. Vivamus eu
+          sapien non arcu aliquam molestie.</p>
+        </article>
+      </div>
+      <div class="deck card">
+        <article class="text-section">
+          <h1>Lorem Ipsum</h1>
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+          "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+
+          <p>ipsum dolor sit amet, consectetur adipiscing elit. Mauris id lacinia lacus, vitae dapibus justo. Sed ac
+          urna at odio convallis sagittis pharetra et mi. Aenean nisi arcu, placerat ut tempus at, feugiat et nibh.
+          Maecenas quis leo nec odio laoreet placerat. Phasellus id est pharetra, mattis purus vel, mollis neque.
+          Maecenas eros massa, pulvinar sit amet ipsum eu, condimentum varius magna. Vestibulum ut odio ut enim
+          vulputate gravida.</p>
+
+          <p>Vestibulum facilisis suscipit massa ac ullamcorper. Morbi et mattis neque. Vestibulum mi dui, tincidunt sed
+          metus vitae, sagittis blandit neque. Aliquam erat volutpat. Morbi non justo quis mi efficitur mattis. Proin
+          ipsum nibh, mollis nec ante sit amet, pharetra faucibus libero. Aenean hendrerit imperdiet ante id convallis.
+          Cras ac ultricies nisi, quis sollicitudin mi.</p>
+
+          <p>Aliquam faucibus sapien nec justo tristique, tempus malesuada enim ullamcorper. Nullam ultricies quam libero,
+          non euismod tellus pellentesque vitae. Curabitur lorem lacus, interdum in nisl at, venenatis viverra nulla.
+          Nulla nibh odio, dictum at risus quis, dictum rutrum nunc. Curabitur scelerisque nunc enim, finibus aliquet
+          nunc vehicula eget. Nulla facilisi. Suspendisse quis cursus nulla. Mauris ac laoreet diam. Sed interdum
+          malesuada lacus, at efficitur quam congue ac. Quisque quis lorem sit amet nisi varius maximus ac vitae odio.
+          Nullam lacinia ac odio sit amet mollis. Ut volutpat posuere augue.</p>
+
+          <p>Cras nec est lectus. Ut facilisis dapibus consectetur. In sagittis dui condimentum finibus pretium. Morbi sed
+          sagittis sem, et semper mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, arcu eget
+          semper ultrices, lorem velit tincidunt tellus, vel tincidunt metus sapien sed orci. Class aptent taciti
+          sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+          <p>Morbi fringilla ipsum eget mauris ornare, eget dictum lectus scelerisque. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Sed laoreet magna aliquam sem ornare, facilisis malesuada ante scelerisque.
+          Suspendisse potenti. Aliquam erat volutpat. Aenean molestie auctor risus sit amet aliquet. Vestibulum faucibus
+          cursus enim at tincidunt. Morbi maximus varius ultrices. Proin vehicula hendrerit ex et porttitor. Vivamus eu
+          sapien non arcu aliquam molestie.</p>
+        </article>
+      </div>
+      <div class="deck card">
+        <article class="text-section">
+          <h1>Lorem Ipsum</h1>
+          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+          "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+
+          <p>ipsum dolor sit amet, consectetur adipiscing elit. Mauris id lacinia lacus, vitae dapibus justo. Sed ac
+          urna at odio convallis sagittis pharetra et mi. Aenean nisi arcu, placerat ut tempus at, feugiat et nibh.
+          Maecenas quis leo nec odio laoreet placerat. Phasellus id est pharetra, mattis purus vel, mollis neque.
+          Maecenas eros massa, pulvinar sit amet ipsum eu, condimentum varius magna. Vestibulum ut odio ut enim
+          vulputate gravida.</p>
+
+          <p>Vestibulum facilisis suscipit massa ac ullamcorper. Morbi et mattis neque. Vestibulum mi dui, tincidunt sed
+          metus vitae, sagittis blandit neque. Aliquam erat volutpat. Morbi non justo quis mi efficitur mattis. Proin
+          ipsum nibh, mollis nec ante sit amet, pharetra faucibus libero. Aenean hendrerit imperdiet ante id convallis.
+          Cras ac ultricies nisi, quis sollicitudin mi.</p>
+
+          <p>Aliquam faucibus sapien nec justo tristique, tempus malesuada enim ullamcorper. Nullam ultricies quam libero,
+          non euismod tellus pellentesque vitae. Curabitur lorem lacus, interdum in nisl at, venenatis viverra nulla.
+          Nulla nibh odio, dictum at risus quis, dictum rutrum nunc. Curabitur scelerisque nunc enim, finibus aliquet
+          nunc vehicula eget. Nulla facilisi. Suspendisse quis cursus nulla. Mauris ac laoreet diam. Sed interdum
+          malesuada lacus, at efficitur quam congue ac. Quisque quis lorem sit amet nisi varius maximus ac vitae odio.
+          Nullam lacinia ac odio sit amet mollis. Ut volutpat posuere augue.</p>
+
+          <p>Cras nec est lectus. Ut facilisis dapibus consectetur. In sagittis dui condimentum finibus pretium. Morbi sed
+          sagittis sem, et semper mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan, arcu eget
+          semper ultrices, lorem velit tincidunt tellus, vel tincidunt metus sapien sed orci. Class aptent taciti
+          sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+          <p>Morbi fringilla ipsum eget mauris ornare, eget dictum lectus scelerisque. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Sed laoreet magna aliquam sem ornare, facilisis malesuada ante scelerisque.
+          Suspendisse potenti. Aliquam erat volutpat. Aenean molestie auctor risus sit amet aliquet. Vestibulum faucibus
+          cursus enim at tincidunt. Morbi maximus varius ultrices. Proin vehicula hendrerit ex et porttitor. Vivamus eu
+          sapien non arcu aliquam molestie.</p>
+        </article>
+      </div>
+    </section>
+      
+    <!-- another blob -->
+    <section class="content-sidebar-column">
+        <div class="column card">
+          <article class="text-section">
+          <h2>Card</h2>
+          <p>Picture of celebration</p>
+          </article>
+        </div>
+        <div class="column card">
+          <article class="text-section">
+          <h2>Card</h2>
+          <p>Picture of celebration</p>
+          </article>
+        </div>
+        <div class="column card">
+          <article class="text-section">
+          <h2>Card</h2>
+          <p>Picture of celebration</p>
+          </article>
+        </div>
+        <div class="column card">
+          <article class="text-section">
+          <h2>Card</h2>
+          <p>Picture of celebration</p>
+          </article>
+        </div>
+        <div class="column card">
+          <article class="text-section">
+          <h2>Card</h2>
+          <p>Picture of celebration</p>
+          </article>
+        </div>
+        <div class="column card">
+          <article class="text-section">
+          <h2>Card</h2>
+          <p>Picture of celebration</p>
+          </article>
+        </div>
+        <div class="column card">
+          <article class="text-section">
+          <h2>Card</h2>
+          <p>Picture of celebration</p>
+          </article>
+        </div>
+    </section>
+  </main>
+</body>
+
+<!-- nice-to-have-but-i-do-not-want-it-in-my-face info and links goes here -->
+<!-- <footer></footer> -->
+
+</html>

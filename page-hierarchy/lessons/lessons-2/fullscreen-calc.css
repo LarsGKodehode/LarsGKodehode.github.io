@@ -13,6 +13,7 @@ body {
 /* calculator frame */
 #frame {
   border: 2px solid green; /* DEL when done */
+  background-color: rgba(0, 0, 0, 0.249);
   height: var(--frame-height);
   width: var(--frame-width);
   padding: 5vh 5vw;
@@ -30,6 +31,7 @@ body {
 /* display of calculator, possibly multiple lines */
 #display {
   border: 2px solid green; /* DEL when done */
+  background-color: rgba(0, 0, 0, 0.249);
   border-radius: 2rem;
   padding: 2.5rem;
   margin-bottom: 2.5rem;
@@ -43,18 +45,38 @@ body {
 /* buttons to push, numbers and functions */
 #keyboard {
   border: 2px solid green; /* DEL when done */
+  background-color: rgba(0, 0, 0, 0.249);
   display: flex;
-  justify-content: right; /*right is usually closer to thumb, can't satisfy both rh an lf*/
+  justify-content: right; /* right is closer to thumb, can't satisfy both rh an lh */
   height: calc(var(--frame-height) * 2/5);
+  border-radius: 1rem;
 }
 
 .button {
   border: 2px solid green; /* DEL when done */
+  background-color: grey;
+  border-radius: .3rem;
+  color: black;
+  min-width: 20%;
+  min-height: 20%;
+}
+
+/* @media querries device specific attributes */
+@media (any-hover) {
+  .button:hover {
+  background-color: rgb(199, 199, 199);
+  }
+}
+
+.button:active {
+  background-color: rgb(70, 70, 70);
 }
 
 #keyboard--section-functions {
   border: 2px solid green; /* DEL when done */
-  
+  background-color: rgba(0, 0, 0, 0.249);
+  margin-right: 5px;
+  border-radius: 1rem;
 }
 
 .functions {
@@ -64,7 +86,8 @@ body {
 
 #keyboard-section-numbers {
   border: 2px solid green; /* DEL when done */
-
+  background-color: rgba(0, 0, 0, 0.249);
+  border-radius: 1rem;
 }
 
 .numbers {

@@ -4,48 +4,58 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Fullscreen Calc</title>
+  <meta name="description" content="fullscreen web based calculator">
 
-    <link rel="stylesheet" href="./fullscreen-calc.css">
+  <title>Fullscreen Calc</title>
 
-    <link rel="icon" type="image/png" sizes="196x196" href="/content/icon/icon-default-196x196.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/content/icon/icon-apple-180x180.png">
+  <link rel="stylesheet" href="./fullscreen-calc.css">
 
+  <link rel="icon" type="image/svg" href="/content/icon/icon-original.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/content/icon/icon-apple-180x180.png">
 </head>
 
 <body>
   <main id="frame">
-    <div id="display">
-      <!-- insert number of lines in display here -->
-      <div class="display-row"></div>
+    <div id="display-frame">
+      <div id="display"><span id="display-cursor">BOOTING</span> </div>
     </div>
     <div id="keyboard">
-      <span id="keyboard--section-functions">
+      <span id="keyboard-section-functions">
         <!-- insert function buttons here -->
-        <button class="button functions" type="button">=</button>
-        <button class="button functions" type="button">+</button>
-        <button class="button functions" type="button">-</button>
+        <button onclick="calculate(funcEqual())" class="button functions" type="button">=</button>
+        <button onclick="calculate(funcAdd())" class="button functions" type="button">+</button>
+        <button onclick="calculate(funcSub())" class="button functions" type="button">-</button>
+        <!-- dev function -->
+        <button onclick="funcLog()" class="button functions" type="button">c.log</button>
       </span>
-      <span id="keyboard-section-numbers">
+      <div id="keyboard-section-numbers">
         <!-- insert number buttons here -->
-        <button class="button numbers" type="button">0</button>
-        <button class="button numbers" type="button">1</button>
-        <button class="button numbers" type="button">2</button>
-        <button class="button numbers" type="button">3</button>
-        <button class="button numbers" type="button">4</button>
-        <button class="button numbers" type="button">5</button>
-        <button class="button numbers" type="button">6</button>
-        <button class="button numbers" type="button">7</button>
-        <button class="button numbers" type="button">8</button>
-        <button class="button numbers" type="button">9</button>
-      </span>
+        <span class="keyboard-numbers-row">
+          <button onclick="writeDigit(0)" class="button numbers" type="button">0</button>
+          <button onclick="cursorClear()" class="button numbers" type="button">CLR</button>
+        </span>
+        <span class="keyboard-numbers-row">
+          <button onclick="writeDigit(1)" class="button numbers" type="button">1</button>
+          <button onclick="writeDigit(2)" class="button numbers" type="button">2</button>
+          <button onclick="writeDigit(3)" class="button numbers" type="button">3</button>
+        </span>
+        <span class="keyboard-numbers-row">
+          <button onclick="writeDigit(4)" class="button numbers" type="button">4</button>
+          <button onclick="writeDigit(5)" class="button numbers" type="button">5</button>
+          <button onclick="writeDigit(6)" class="button numbers" type="button">6</button>
+        </span>
+        <span class="keyboard-numbers-row">
+          <button onclick="writeDigit(7)" class="button numbers" type="button">7</button>
+          <button onclick="writeDigit(8)" class="button numbers" type="button">8</button>
+          <button onclick="writeDigit(9)" class="button numbers" type="button">9</button>
+        </span>
+      </div>
     </div>
   </main>
   <script src="./fullscreen-calc.js"></script>
 </body>
-
 </html>

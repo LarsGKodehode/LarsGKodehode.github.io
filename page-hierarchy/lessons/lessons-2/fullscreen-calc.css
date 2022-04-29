@@ -6,7 +6,7 @@ body {
   /* put variables here */
   --frame-height: 80vh;
   --frame-width: 80vw;
-  --number-display-rows: 1;
+  --display-rows: 1;
 }
 
 
@@ -29,7 +29,7 @@ body {
 }
 
 /* display of calculator, possibly multiple lines */
-#display {
+#display-frame {
   border: 2px solid green; /* DEL when done */
   background-color: rgba(0, 0, 0, 0.249);
   border-radius: 2rem;
@@ -38,8 +38,11 @@ body {
   height: calc(var(--frame-height) * 1/5);
 }
 
-.display-row{
+#display {
   border: 2px solid green; /* DEL when done */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
 }
 
 /* buttons to push, numbers and functions */
@@ -52,45 +55,60 @@ body {
   border-radius: 1rem;
 }
 
-.button {
-  border: 2px solid green; /* DEL when done */
-  background-color: grey;
-  border-radius: .3rem;
-  color: black;
-  min-width: 20%;
-  min-height: 20%;
-}
-
-/* @media querries device specific attributes */
-@media (any-hover) {
-  .button:hover {
-  background-color: rgb(199, 199, 199);
-  }
-}
-
-.button:active {
-  background-color: rgb(70, 70, 70);
-}
-
-#keyboard--section-functions {
+#keyboard-section-functions {
   border: 2px solid green; /* DEL when done */
   background-color: rgba(0, 0, 0, 0.249);
   margin-right: 5px;
   border-radius: 1rem;
+  width: calc( 95% * 1/3);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
 }
 
 .functions {
   border: 2px solid green; /* DEL when done */
-  
+  height: 95%;
 }
 
 #keyboard-section-numbers {
   border: 2px solid green; /* DEL when done */
   background-color: rgba(0, 0, 0, 0.249);
   border-radius: 1rem;
+  width: calc( 95% * 2/3);
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+.keyboard-numbers-row {
+  border: 2px solid green; /* DEL when done */
+  width: 95%;
+  height: calc(95% * 1/5);
+  display: flex;
+  justify-content: space-between;
 }
 
 .numbers {
   border: 2px solid green; /* DEL when done */
+  width: calc( 90% / 3 );
+  height: 95%;
+}
 
+.button {
+  border: 2px solid green; /* DEL when done */
+  background-color: rgba(128, 128, 128, 0.901);
+  border-radius: .3rem;
+  color: black;
+}
+
+/* disables wrapped block for devices with no support */
+@media (any-hover) {
+  .button:hover {
+    background-color: rgb(199, 199, 199);
+  }
+}
+
+.button:active {
+  background-color: rgb(70, 70, 70);
 }

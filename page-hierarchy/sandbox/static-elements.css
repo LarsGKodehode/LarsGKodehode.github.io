@@ -1,0 +1,34 @@
+body{
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+
+#header-base {
+  border: 2px solid red; /* DELETE when done */
+  width: 100vw;
+  height: 25vh;
+  margin-bottom: 10rem;
+}
+
+#sidescrapers-base {
+  border: 2px solid red; /* DELETE when done */
+  width: 100vw;
+  padding: 0px calc(90% * 1/3);
+  display: flex;
+  justify-content: center;
+}
+
+#main-base {
+  border: 2px solid red; /* DELETE when done */
+  width: 100%;
+  height: 1000px;
+}
+
+#footer-base {
+  border: 2px solid red; /* DELETE when done */
+  width: 100vw;
+  height: 25vh;
+  align-self:flex-end;
+}

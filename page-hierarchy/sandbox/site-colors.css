@@ -1,13 +1,21 @@
 :root {
   /* Main site color selection */
   /* Dark Theme */
-  --color-dark-theme-main1: rgb(164, 68, 0);
-  --color-dark-theme-main2: rgb(82, 34, 0);
+  --dark-theme-color-background: black;
+  --dark-theme-color-main1: rgb(164, 68, 0);
+  --dark-theme-color-main2: rgb(82, 34, 0);
 
-  --color-dark-theme-contrast1: plum;
+  --dark-theme-color--contrast1: plum;
 
   /* Bright Theme */
 
-}
+  /* Font styling */
 
-/* Font styling */
+
+  /* TEMP STYLING FOR PLACEMENT */
+  --color1:red;
+  --color2:blue;
+  --color3:green;
+  --color4:yellow;
+  
+}

@@ -13,7 +13,7 @@ body{
 /* header */
 #header-base {
   width: 100%;
-  height: min-content;
+  /* height: min-content; */
 }
 
 #banner-video {
@@ -27,13 +27,14 @@ body{
   position: absolute;
   top: 0px;
   left: 0px;
+  transform: translateY(65%);
 }
 
 #heading-header {
-  background-color: rgba(0, 0, 0, 0.493);
+  background-color: rgba(0, 0, 0, 0.718);
   color: aliceblue;
   text-align: center;
-  font-size: 20rem;
+  font-size: 8rem;
 }
 
 /* background sides */
@@ -79,7 +80,7 @@ body{
   margin: 1rem;
   overflow: hidden;
   border: 2px solid rgba(0, 0, 0, 0.753);
-  box-shadow: .01rem .01rem .05rem black;
+  box-shadow: .05rem .05rem .1rem black;
 }
 
 
@@ -114,6 +115,7 @@ body{
 
 .footer-container-adress a {
   color: white;
+  text-decoration: none;
   
 }
 

@@ -27,7 +27,7 @@ body{
   position: absolute;
   top: 0px;
   left: 0px;
-  transform: translateY(65%);
+  transform: translateY(50%);
 }
 
 #heading-header {
@@ -39,10 +39,6 @@ body{
 
 /* background sides */
 #sidescrapers-base {
-  /* DELETE from here */
-  background-color: var(--color2);
-  /* to here */
-
  background-image: url(/content/img/background.jpg);
 }
 
@@ -72,6 +68,7 @@ body{
 /* card sizes */
 .card-main {
   background-color: var(--dark-theme-color-main1);
+  
 
   width: 10rem;
   height: 10rem;

@@ -46,7 +46,7 @@ body{
 }
 
 #main-background {
-  background-image: url(/content/img/background.jpg);
+  background-image: url("/content/img/background.jpg");
   background-size: cover;
   background-position: center;
 }

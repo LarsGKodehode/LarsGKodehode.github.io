@@ -12,25 +12,27 @@ body {
   top: 0px;
   left: 0px;
   margin: 0px;
-  height: 100vh;
-  width: 100vw;
-  /* is there a better way to align blocks flush with viewport? */
-  display: flex;
-  flex-direction: column;
-  text-align: center;
 }
 
 #block-top {
   background: linear-gradient(246.26deg, #585DFE 0%, #FB3796 100%);
-  height: calc(100% * var(--golden-ratio-lesser));
+  height: calc( 100vh * 3/7);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.heading {
+  text-align: center;
+  
+  /* fixes font size to width of veiwport, this fails on accessability, zoom 400%, test*/
+  font-size: calc(100vw * 1/15);
+}
+
 #input-field {
   background-color: transparent;
+  width: 75%;
   border: 0;
   font-size: 6.5rem;
   text-align: center;
@@ -38,17 +40,13 @@ body {
 
 #block-bottom {
   background: #1F2937;
-  height: calc(100% * var(--golden-ratio-greater));
+  height: calc(100vh * 4/7);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.measurement-detail {
-  display: flex;
+.info-block-wrapper {
+
 }
 
-.write-field {
-  width: 25%;
-}

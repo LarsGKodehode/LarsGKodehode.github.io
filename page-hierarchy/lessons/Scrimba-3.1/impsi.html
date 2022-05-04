@@ -16,7 +16,6 @@
   
   <link rel="icon" type="image/svg" sizes="196x196" href="/content/icon/icon-original.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/content/icon/icon-apple-180x180.png">
-
 </head>
 
 <body>
@@ -25,21 +24,35 @@
     <input type="numeric" id="input-field" name="measurment field" pattern[0-9] placeholder="00">
   </div>
   <div id="block-bottom">
-    <h2 class="measurement-description">Length (Feets&harr;Meters)
-      <p id="measurement-length" class="measurement-detail">
-        <span class="imp write-field">0.000</span> Feets | SI <span class=si write-field>0.000</span>
-      </p>
-    </h2>
-    <h2 class="measurement-description">Volume (Gallons&harr;Litres)
-      <p id="measurement-volume" class="measurement-detail">
-        <span class="imp write-field">0.000</span> Gallons | Liters <span class=si write-field>0.000</span>
-      </p>
-    </h2>
-    <h2 class="measurement-description">Mass (Pounds&harr;Kilograms)
-      <p id="measurement-mass" class="measurement-detail">
-        <span class="imp write-field">0.000</span> Pounds | Kilograms <span class=si write-field>0.000</span>
-      </p>
-    </h2>
+    
+    <!-- section for length -->
+    <div class="info-block-wrapper">
+      <!-- top subtext -->
+      <div id="output-container-length" class="info-block-description">Imperial &harr; SI</div>
+      <!-- output fields -->
+      <div>
+        <!-- imperial to SI -->
+        <span class="output-imp-si">
+          <span id="output-length-imp-si-1" class="output-field">0.000 feets</span>
+
+          <span class="output-divider">=</span>
+
+          <span id="output-lenght-imp-si-2"  class="output-field">0.000 meters</span>
+        </span>
+        <!-- divider -->
+        <span class="output-divider">|</span>
+        <!-- SI to imperial -->
+        <span class="output-si-imp">
+          <span id="output-length-si-imp-1" class="output-field">0.000 meters</span>
+
+          <span class="output-divider">=</span>
+          
+          <span id="output-lenght-si-imp-2"  class="output-field">0.000 feets</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="info-block-output"><span class="out-position"></span><span class="out-position"></span><span class="out-position"></span></div>
   </div>
   <script defer src="impsi.js"></script>
 </body>

@@ -1,39 +1,53 @@
-//all valid Imperial to SI ratios
+// uses ratioImpToSi as a dictionary
+// available Imperial to SI ratios
 const ratioImpToSi = {
   length: 3.2808398950131233595800524934383,
   volume: 0.21996924829908778752730368294512,
   mass: 2.2046244201837774916665196917053,
 };
 
-// variables
-let input = document.getElementById(input-field)
-let currentNumber;
-
-function impSiConverter(unit, value) {
-  ratioImpToSi.unit
+// populate array with keys
+let ratioKeys = [];
+for (key in ratioImpToSi.entries) {
+  ratioKeys.push(key);
 };
 
+// let outputFields = [];
+
+
+// "global" variables
+let input = document.getElementById(input-field);
+let running = true;
+let newNumber;
+let currentNumber;
+
+// minor functions
+function impSiConverter(unit, value) {
+
+}; 
+
+// main loop functions
 function updateCurrentNumber() {
-  // don't update unnecessaryly
+  // might be wiser adding a listener, this require wrapping main loop in a function
   // if (newNumber === currentNum) {
-    //   waitSomeInterval(pauseTime)};
-    
-    // check if actually a number
-    if (isNaN(newNumber)) {return};
-    
-    currentNumber = newNumber;
-  };
+    //   setTimeout();
+    //   running = false;
+    // };
   
-  function updateDisplay() {
-    for (func in conversions) {
-    conversions[func](currentNumber);
-  };
+  // check if actually a number
+  if (isNaN(newNumber)) {return};
+  
+  currentNumber = newNumber;
+};
+
+function updateDisplay() {
+  
 };
 
 //main loop
-while (true) {
+while (running) {
   // gets input number
-  let newNumber = input.innerHTML;
+  newNumber = input.innerHTML;
 
   // sequence
   updateCurrentNumber();

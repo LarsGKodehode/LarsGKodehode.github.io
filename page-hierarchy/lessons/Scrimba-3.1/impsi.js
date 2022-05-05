@@ -1,55 +1,64 @@
-// uses ratioImpToSi as a dictionary
-// available Imperial to SI ratios
-const ratioImpToSi = {
-  length: 3.2808398950131233595800524934383,
-  volume: 0.21996924829908778752730368294512,
-  mass: 2.2046244201837774916665196917053,
+// sets ratio of Imperial and SI units
+// object {key,[iperialUnit, siUnit]}
+let ratioImpToSi = {};
+// ratios here
+ratioImpSi.length = [
+  // 1 feet to meters
+  0.3048,
+  // 1 meter to feets
+  3.2808398950131233595800524934383];
+
+ratioImpSi.volume = [
+  // 1 Imperial Gallon to liters
+  4.54609,
+  // 1 SI to Imperial
+  0.21996924829908778752730368294512];
+
+ratioImpSi.mass = [
+  // 1 Pound to kilograms
+  0.3048,
+  // 1 SI to Imperial
+  3.2808398950131233595800524934383];
+// end of ratios
+
+// object prototype to hold converted values
+let convertedInput = {};
+for ( key in Object.entries(ratioImpSi)) {
+  convertedInput.`${key}` = ;
 };
 
-// populate array with keys
-let ratioKeys = [];
-for (key in ratioImpToSi.entries) {
-  ratioKeys.push(key);
+// program class
+class converter {
+  // Public
+  run() {
+    this.getInput();
+    this.convert();
+    this.updateOutput();
+  };
+
+  // Private
+  #currentInput;
+  #newInput;
+  // Stores input field in private variable
+  getInput() {
+    this.#newInput = document.getElementById("input-field");
+    if (isNaN(this.#newInput)){return}; // throw error? or fail silently?
+    this.#currentInput = this.#newInput;
+  };
+
+  // converts input number into Imperial and SI units 
+  convertAll() {
+
+  };
+
+  // Prints converted number to output fields
+  updateOutput() {
+
+  };
 };
 
-// let outputFields = [];
+document.getElementsByClassName()
 
-
-// "global" variables
-let input = document.getElementById(input-field);
-let running = true;
-let newNumber;
-let currentNumber;
-
-// minor functions
-function impSiConverter(unit, value) {
-
-}; 
-
-// main loop functions
-function updateCurrentNumber() {
-  // might be wiser adding a listener, this require wrapping main loop in a function
-  // if (newNumber === currentNum) {
-    //   setTimeout();
-    //   running = false;
-    // };
-  
-  // check if actually a number
-  if (isNaN(newNumber)) {return};
-  
-  currentNumber = newNumber;
-};
-
-function updateDisplay() {
-  
-};
-
-//main loop
-while (running) {
-  // gets input number
-  newNumber = input.innerHTML;
-
-  // sequence
-  updateCurrentNumber();
-  updateDisplay();
-};
+// activate program
+const program = new converter;
+setInterval(program.run(), 500);

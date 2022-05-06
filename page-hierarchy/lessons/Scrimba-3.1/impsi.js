@@ -42,6 +42,7 @@ class converter {
     this.#newInput = document.getElementById("input-field");
     if (isNaN(this.#newInput)){return false}; // throw error? or fail silently?
     this.#currentInput = this.#newInput;
+    return 
   };
 
   // converts currentInput to other units
@@ -55,13 +56,13 @@ class converter {
           ];
     };
     
-    // for dev purposes
+    // <DELETE dev code DELETE
     for (const [type, info] of Object.entries(convertedInput)) {
         console.log("\n" + type);
         console.log(currentInput + info[1][0] + " = " + info[0][1] + info[0][0]);
         console.log(currentInput + info[0][0] + " = " + info[1][1] + info[1][0]);
     };
-    // for dev purposes
+    // DELETE dev code DELETE>
 
     return convertedInput;
   };

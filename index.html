@@ -2,33 +2,38 @@
 <!-- hints at page language for SEO and accessabilty features. list ISO 639-1 https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes -->
 <html lang="en">
 
+
 <!-- meta section -->
 
 <head>
-  <!-- always define charset, use utf-8 except if you are special, free ranging browsers are troublesome -->
+  <!-- always define charset! use utf-8 except if you are special, free ranging browsers are troublesome -->
   <meta charset="utf-8">
 
-  <!-- legacy windows IE stuff -->
+  <!-- TODO: legacy windows IE stuff, couldn't find a reason it's still needed -->
   <!-- <meta http-equiv="X-UA-Compatible" content="IE-Edge"> -->
 
-  <!-- seems fine, necessary? -->
+  <!-- (non-standard) mobile browsers renders pages to a large canvas,   -->
+  <!-- which then gets rescaled to fit the actual screen, -->
+  <!-- this gives hints to how that should be done -->
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Architect: Lars Gunnar, homepage for a living Circulum Vitea" <!-- title for browser
-    window. defaults to path -->
+  <!-- TODO: used for SEO? needs further research -->
+  <meta name="description" content="Architect: Lars Gunnar, homepage for a living Circulum Vitea">
+
+  <!-- title for browser window. defaults to path -->
   <title>test-project-index</title>
 
-  <!-- links to .css and applies styling. supports multiple, last tramples 
-        first -->
+  <!-- links to .css and applies styling. supports multiple, last tramples first -->
   <link rel="stylesheet" href="/css/page-standards.css">
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/homepage-specific.css">
 
-  <!--
-    favicon: discrepancy between browser vendors and devices, HTML5 spec still in talks. https://stackoverflow.com/questions/23849377/html-5-favicon-support
-    -->
-
+  <!-- favicon: discrepancy between browser vendors and devices, -->
+  <!-- HTML5 spec still in talks. -->
+  <!-- https://stackoverflow.com/questions/23849377/html-5-favicon-support -->
   <!-- .svg seems to have broad support among browsers, can possibly remove apple specific -->
+  <!-- it's also used for "app-like-shortcuts" on phones -->
   <link rel="icon" type="image/svg" href="/content/icon/icon-original.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/content/icon/icon-apple-180x180.png">
 
@@ -37,10 +42,11 @@
   <!-- TODO: windows phones got some homemade brew, popular enough to care? -->
 </head>
 
+
 <!-- page layout and content -->
 
 <body>
-  <!-- header is for introduction or navigational tools -->
+  <!-- header is for introduction or navigational tools, page banner should also go here -->
   <header id="nav-bar-base">
     <div class="nav-bar-video-container">
       <video class="hosted-video video-nav-bar-background" autoplay muted loop
@@ -59,8 +65,10 @@
       </ul>
     </nav>
   </header>
-  <!-- TODO: design content -->
+
+
   <!-- part of site containing actual content -->
+
   <main>
     <div id="content-base">
       <h1>TODO: Redisign in progress, <a href="/page-hierarchy/sandbox/static-elements.html">sneekpeak</a></a></h1>
@@ -107,7 +115,9 @@
     </div>
   </main>
 
-  <!-- bottom info bar with various always present not that important stuff -->
+
+  <!-- bottom info bar with various always present sometimes important stuff -->
+
   <footer id="footer-base">
     <div class="footer-empty-space"></div>
     <div class="footer-content-container">

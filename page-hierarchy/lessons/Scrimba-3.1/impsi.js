@@ -1,7 +1,9 @@
 // sets ratio of Imperial and SI units
 // object {unit,[[iperialUnit, ratio], [siUnit, ratio]}
+console.log("drafting exchange");
 let ratioImpSi = {};
 // ratios here
+console.log("-inserting rates");
 ratioImpSi.length = [
   // feet / meter
   ["feet", 0.3048],
@@ -22,60 +24,85 @@ ratioImpSi.mass = [
   // kilogram / pound
   ["kilogram", 3.2808398950131233595800524934383]
   ];
+console.log("exchange full");
 // end of ratios
 
 // program class  
 class converter {
   // Public
   run() {
-    if (!this.getInput() === true) {return}; //input is NAN
-    this.convert();
-    this.updateOutput();
+    console.log("-searching for value");
+    if (!this.#getInput() === true) {return}; // could not parse input to number
+    console.log("-value acquired");
+    
+    console.log("-converting to local currency");
+    this.#convertAll();
+    console.log("-conversion finished");
+    
+    console.log("-promoting values")
+    this.#updateOutput();
+    console.log("-update published");
   };
 
   // Private
-  #currentInput;
-  #newInput;
+  #currentInput = 8;
+  #newInput = 10;
+  #convertedInput = {};
 
-  // returns false if NAN
-  getInput() {
-    this.#newInput = document.getElementById("input-field");
-    if (isNaN(this.#newInput)){return false}; // throw error? or fail silently?
+  // returns false if parsing input to number fails
+  #getInput() {
+    console.log(" -collecting valuables");
+    this.#newInput = Number(document.getElementById("input-field"));
+    console.log(" -has value?");
+    if (isNaN(this.#newInput) === true) {
+      console.log("  -wealth not real");
+      return false};
+    console.log(" -wealth real");
+    console.log(" -inserting to reality");
     this.#currentInput = this.#newInput;
-    return 
+    return true;
   };
 
   // converts currentInput to other units
-  // returns {unitType, [unitImperial, outImperial], [unitMetric, outMetric]}
-  convertAll() {
-    let convertedInput = {};
+  // produces {unitType, [unitImperial, outImperial], [unitMetric, outMetric]}
+  #convertAll() {
+    console.log(" -calculating hoard")
     for (const [type, info] of Object.entries(ratioImpSi)) {
-      convertedInput[type] = [
-          [info[0][0],info[0][1] * currentInput],
-          [info[1][0],info[1][1] * currentInput]
+      this.#convertedInput[type] = [
+          [info[0][0],info[0][1] * this.#currentInput],
+          [info[1][0],info[1][1] * this.#currentInput]
           ];
     };
-    
-    // <DELETE dev code DELETE
-    for (const [type, info] of Object.entries(convertedInput)) {
-        console.log("\n" + type);
-        console.log(currentInput + info[1][0] + " = " + info[0][1] + info[0][0]);
-        console.log(currentInput + info[0][0] + " = " + info[1][1] + info[1][0]);
-    };
-    // DELETE dev code DELETE>
+  };
 
-    return convertedInput;
+  // Prints converted number to output fields
+  #updateOutput() {
+      console.log(" -orator not employed")
   };
   
-  // Prints converted number to output fields
-  updateOutput() {
-
+  // <DELETE dev code DELETE
+  log() {
+    console.log(" -testing reality");
+    for (const [type, info] of Object.entries(this.#convertedInput)) {
+        console.log("\n" + type);
+        console.log(this.#currentInput + info[1][0] + " = " + info[0][1] + info[0][0]);
+        console.log(this.#currentInput + info[0][0] + " = " + info[1][1] + info[1][0]);
+    };
   };
+  // DELETE dev code DELETE>
 };
 
 // document.getElementsByClassName();
 
 // activate program
+console.log("declearing reality");
 const program = new converter;
+
+console.log("jumpstarting reality");
 program.run();
-setInterval(program.run(), 500);
+
+console.log("what is real?");
+program.log();
+
+// console.log("implementing time");
+// setInterval(program.run(), 500);

@@ -9,6 +9,10 @@
 
   --dark-theme-color-accent1: violet;
 
+  --dark-theme-color-shade1: rgba(0, 0, 0, 0.666);
+
+  --dark-theme-color-shadow1: rgba(92, 92, 92, 0.526);
+
   /* footer styling */
   --dark-theme-color-footer-background: rgba(70, 70, 70, 0.452);
 

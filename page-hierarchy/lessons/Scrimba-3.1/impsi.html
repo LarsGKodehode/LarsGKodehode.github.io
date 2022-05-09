@@ -6,7 +6,6 @@
 <head>
   <meta charset="utf-8">
 
-  <!-- TODO: check if necessary? -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="Imperial SI converter" content="Scrimba project for an Imperial SI converter">
 
@@ -21,7 +20,7 @@
 <body>
   <div id="block-top">
     <h1 class="heading"><bold>Imperial</bold> &harr; <bold>SI</bold> unit conversion</h1>
-    <input type="numeric" id="input-field" name="measurment field" pattern[0-9] placeholder="00">
+    <input id="input-field" type="text" name="measurment field" inputmode="numeric" pattern[0-9] value="0">
   </div>
   <div id="block-bottom">
     
@@ -31,7 +30,7 @@
       <div id="output-container-length" class="info-block-description">Imperial &harr; SI</div>
       <!-- output fields -->
       <div>
-        <!-- imperial to SI -->
+        <!-- Imperial to SI -->
         <span class="output-imp-si">
           <span id="output-length-imp-si-1" class="output-field">0.000 feets</span>
 
@@ -41,7 +40,7 @@
         </span>
         <!-- divider -->
         <span class="output-divider">|</span>
-        <!-- SI to imperial -->
+        <!-- SI to Imperial -->
         <span class="output-si-imp">
           <span id="output-length-si-imp-1" class="output-field">0.000 meters</span>
 
@@ -54,7 +53,7 @@
 
     <div class="info-block-output"><span class="out-position"></span><span class="out-position"></span><span class="out-position"></span></div>
   </div>
-  <script defer src="impsi.js"></script>
+  <script defer type="module" src="impsi.js"></script>
 </body>
 
 </html>

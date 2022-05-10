@@ -31,7 +31,7 @@ body{
 #heading-header-container {
   width: 100%;
   height: 100vh;
-  position: absolute; /* absolute used to remove from stacking context */
+  position: absolute; /* absolute used to create own stacking context for overlaying under text */
 
   /* overlays it on the background video */
   top: 0px;

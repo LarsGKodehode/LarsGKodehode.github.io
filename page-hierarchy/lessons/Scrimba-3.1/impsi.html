@@ -11,7 +11,9 @@
 
   <title>ImpSI</title>
 
+  <link rel="stylesheet" href="standards.css">
   <link rel="stylesheet" href="impsi.css">
+
   
   <link rel="icon" type="image/svg" sizes="196x196" href="/content/icon/icon-original.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/content/icon/icon-apple-180x180.png">
@@ -20,7 +22,7 @@
 <body>
   <div id="block-top">
     <h1 class="heading"><bold>Imperial</bold> &harr; <bold>SI</bold> unit conversion</h1>
-    <input id="input-field" type="text" name="measurment field" inputmode="numeric" pattern[0-9] value="0">
+    <input id="input-field" type="text" name="measurment field" inputmode="numeric" pattern[0-9] placeholder="0" autocomplete="off">
   </div>
   <div id="block-bottom">
     
@@ -29,7 +31,7 @@
       <!-- top subtext -->
       <div id="output-container-length" class="info-block-description">Imperial &harr; SI</div>
       <!-- output fields -->
-      <div>
+      <div class="output-typography">
         <!-- Imperial to SI -->
         <span class="output-imp-si">
           <span id="output-length-imp-si-1" class="output-field">0.000 feets</span>
@@ -53,7 +55,7 @@
 
     <div class="info-block-output"><span class="out-position"></span><span class="out-position"></span><span class="out-position"></span></div>
   </div>
-  <script defer type="module" src="impsi.js"></script>
+  <script defer src="impsi.js"></script>
 </body>
 
 </html>

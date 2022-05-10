@@ -1,0 +1,8 @@
+:root {
+  /* colors */
+  --text-color-default: #FFFFFF;
+  --text-color-default-toned-down: #D2D2D2;
+  
+  /* typography */
+  --text-font-family-default: Inter;
+}

@@ -1,22 +1,20 @@
-
-// sets ratio of Imperial and SI units
-// object {unit,[[iperialUnit, ratio], [siUnit, ratio]}
+// object containing valid rations
+//{unit,[[unit1, ratio], [unit2, ratio]}
 const ratioImpSi = {
-  // object containing valid ratios
 length: [
   // feet / meter, meter / feet
-  ["feet", 0.3048],
-  ["meter", 3.2808398950131233595800524934383]
+  ["Feet", 0.3048],
+  ["Meter", 3.2808398950131233595800524934383]
   ],
 volume: [
   // imperial gallon / liter, liter / imperial gallon
-  ["imperial gallon", 4.54609],
-  ["liter", 0.21996924829908778752730368294512]
+  ["Imperial Gallon", 4.54609],
+  ["Liter", 0.21996924829908778752730368294512]
   ],
 mass: [
   // pound / kilogram, kilogram / pound
-  ["pound", 0.3048],
-  ["kilogram", 3.2808398950131233595800524934383]
+  ["Pound", 0.3048],
+  ["Kilogram", 3.2808398950131233595800524934383]
   ],
 };
 
@@ -24,12 +22,17 @@ mass: [
 class converter {
   // Public
   run() {
-    console.log("converter has run " + this.#timesRan + " number of times")
-    this.#timesRan += 1;
-
     if (!this.#getInputInt() === true) {return}; // don't update if can't parse input to number
     this.#convertAll();
-    this.#updateOutput();
+
+    this.#updateOutput(); // WIP
+
+    //DELETE dev
+    for (const [type, info] of Object.entries(this.#convertedInput)) {
+      console.log(`${this.#currentInput} ${type} = ${info[0][0]}:${info[0][1]}`);
+      console.log(`${this.#currentInput} ${type} = ${info[1][0]}:${info[1][1]}`);
+    };
+    //DELETE dev
   };
 
   // Private
@@ -40,40 +43,42 @@ class converter {
 
   // tests and parses input to number
   #getInputInt() {
-    this.#newInput = Number(input.innerHTML);
-    if (this.#newInput === this.#currentInput)
+    this.#newInput = Number(input.value);
     if (!(typeof(this.#newInput) === "number")) {return false};
     this.#currentInput = this.#newInput;
     return true;
   };
 
   // converts currentInput to all valid units
-  // produces {unitType, [unitImperial, outImperial], [unitMetric, outMetric]}
+  // produces {unitType, [unit1, out1], [unit2, out2]}
   #convertAll() {
     for (const [type, info] of Object.entries(ratioImpSi)) {
+      // multiplies values and sets 3 decimal precision
       this.#convertedInput[type] = [
-          [info[0][0], Number.parseFloat(info[0][1] * this.#currentInput).toFixed(3)],
-          [info[1][0], Number.parseFloat(info[1][1] * this.#currentInput).toFixed(3)]
-          ];
+        [info[0][0], Number.parseFloat(info[0][1] * this.#currentInput).toFixed(3)],
+        [info[1][0], Number.parseFloat(info[1][1] * this.#currentInput).toFixed(3)]
+        ];
     };
   };
 
-  // Prints converted number to output fields
+  // updates output fields
   #updateOutput() {
-    console.log("NOT DONE YET")
   };
 };
 
-// acquire input field
+// selects input field
 const input = document.getElementById("input-field")
 
-function programWrapper() {
-  program.run();
-}
-
-// acquire output fields
+// selects output fields
 // document.getElementsByClassName();
 
-// program sequen
+// necesarry for passing correct instance of this to class
+// might be more correct to convert class to function
+function programWrapper() {
+  program.run();
+};
+
+// create program
 const program = new converter;
+// run program on input field change
 input.addEventListener("input", programWrapper);

@@ -1,8 +1,13 @@
 :root {
+  /* default */
   /* colors */
   --text-color-default: #FFFFFF;
-  --text-color-default-toned-down: #D2D2D2;
-  
   /* typography */
   --text-font-family-default: Inter;
+
+  /* toned down/info */
+  --text-toned-down-color: #D2D2D2;
+  --text-toned-down-weight: 400;
+  --text-toned-down-size: 14px;
+  --text-toned-down-height: 20px;
 }

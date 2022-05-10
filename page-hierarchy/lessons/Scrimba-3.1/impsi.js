@@ -22,21 +22,12 @@ mass: [
 class converter {
   // Public
   run() {
-    if (!this.#getInputInt() === true) {return}; // don't update if can't parse input to number
+    if (!this.#getInputInt() === true) {return}; // don't update if can't parse input to real number
     this.#convertAll();
-
-    this.#updateOutput(); // WIP
-
-    //DELETE dev
-    for (const [type, info] of Object.entries(this.#convertedInput)) {
-      console.log(`${this.#currentInput} ${type} = ${info[0][0]}:${info[0][1]}`);
-      console.log(`${this.#currentInput} ${type} = ${info[1][0]}:${info[1][1]}`);
-    };
-    //DELETE dev
+    this.#updateOutput();
   };
 
   // Private
-  #timesRan = 0;
   #currentInput;
   #newInput;
   #convertedInput = {};
@@ -44,7 +35,8 @@ class converter {
   // tests and parses input to number
   #getInputInt() {
     this.#newInput = Number(input.value);
-    if (!(typeof(this.#newInput) === "number")) {return false};
+    // TODO: might get away with only checking for NAN
+    if (!(typeof(this.#newInput)) === "number" || (isNaN(this.#newInput))) {return false};
     this.#currentInput = this.#newInput;
     return true;
   };
@@ -62,18 +54,25 @@ class converter {
   };
 
   // updates output fields
+  // rewrites whole output field, inefficient
   #updateOutput() {
-  };
+    for (const [type, entry] of Object.entries(this.#convertedInput)) {
+        outputFields[0].innerHTML = `${this.#currentInput} ${entry[0][0]}`;
+        outputFields[1].innerHTML = `${entry[0][1]} ${entry[1][0]}`;
+        outputFields[2].innerHTML = `${this.#currentInput} ${entry[1][0]}`;
+        outputFields[3].innerHTML = `${entry[1][1]} ${entry[0][0]}`;
+      };
+    };
 };
 
 // selects input field
 const input = document.getElementById("input-field")
 
 // selects output fields
-// document.getElementsByClassName();
+const outputFields = document.getElementsByClassName("output-field");
 
-// necesarry for passing correct instance of this to class
-// might be more correct to convert class to function
+// necesarry for passing correct instance of this to program
+// might be a more javascriptesque way
 function programWrapper() {
   program.run();
 };

@@ -1,28 +1,27 @@
 html {
-  
-  /* variables */
-  --golden-ratio: 1.618;
-  --golden-ratio-greater: calc(1 / var(--golden-ratio));
-  --golden-ratio-lesser: calc(1 - var(--golden-ratio-greater));
+  /* variables*/
+  --background-gradient: linear-gradient(246.26deg, #585DFE 0%, #FB3796 100%);
+  --background-color: #1F2937;
 }
 
 body {
-  background-color: black;
+  background-color: var(--background-color);
   position: absolute;
   top: 0px;
   left: 0px;
   margin: 0px;
-  width: 100vw;
+  width: 100%;
+  min-width: 350px;
 
   /* typography */
-  font-family: var(--text-color-default);
-  /* text color */
   color: var(--text-color-default);
+  font-family: var(--text-color-default);
 }
 
 #block-top {
-  background: linear-gradient(246.26deg, #585DFE 0%, #FB3796 100%);
-  height: calc( 100vh * 3/7);
+  background: var(--background-gradient);
+  height: calc( 100% * 3/7);
+  min-height: 4em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,11 +37,15 @@ body {
 
 #input-field {
   background-color: transparent;
-  width: 75%;
+  width: 95%; /* this overflows after 6 digits */
   border: 0;
   font-size: 6.5rem;
   text-align: center;
   color: var(--text-color-default);
+
+  font-weight: 800;
+  line-height: 24px;
+  letter-spacing: 0em;
 }
 
 #input-field::placeholder {
@@ -51,8 +54,8 @@ body {
 }
 
 #block-bottom {
-  background: #1F2937;
-  height: calc(100vh * 4/7);
+  height: calc(100% * 7/14);
+  padding-top: calc(100% * 1/14);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,11 +63,12 @@ body {
 
 .info-block-wrapper {
   text-align: center;
+  padding: 2%;
 }
 
 .output-typography {
-  color: var(--text-color-default-toned-down);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
+  color: var(--text-toned-down-color);
+  font-weight: var(--text-toned-down-weight);
+  font-size: var(--text-toned-down-size);
+  line-height: var(--text-toned-down-height);
 }

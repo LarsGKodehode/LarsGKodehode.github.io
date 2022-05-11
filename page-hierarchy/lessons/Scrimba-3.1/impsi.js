@@ -1,11 +1,11 @@
 // conversion object
 class conversionEntry {
-  constructor(type, unit1, unit2, unit1DivideUnit2) {
+  constructor(type, unit1, unit2, unit2DivideUnit1) {
     this.type = type;
     this.unit1 = unit1;
-    this.ratio1 = unit1DivideUnit2;
+    this.ratio1 = 1 / unit2DivideUnit1;
     this.unit2 = unit2;
-    this.ratio2 = 1 / unit1DivideUnit2;
+    this.ratio2 = unit2DivideUnit1;
   };
 };
 
@@ -53,15 +53,26 @@ class converter {
 // array of all conversions
 let conversionBook = [];
 // inserts conversions
-conversionBook.push(new conversionEntry("lenght", "feet", "meter", 0.3048));
-conversionBook.push(new conversionEntry("volume", "imperial gallon", "litre", 4.54609));
-conversionBook.push(new conversionEntry("mass", "pound", "kilogram", 0.45359237));
+conversionBook.push(new conversionEntry("Length", "Meter", "Feet", 0.3048));
+conversionBook.push(new conversionEntry("Volume", "Litre", "Imperial Gallon", 4.54609));
+conversionBook.push(new conversionEntry("Mass", "Kilogram", "Pound", 0.45359237));
 
 // selects input field
 const input = document.getElementById("input-field")
 // selects output fields
 const outputHeader = document.getElementsByClassName("info-block-description");
 const outputFields = document.getElementsByClassName("output-field");
+
+// preformat header field
+// ugly wrapping in code
+for (entry in conversionBook) {
+  outputHeader[entry].innerHTML =
+  `
+  ${conversionBook[entry].type}
+   (${conversionBook[entry].unit1}/
+   ${conversionBook[entry].unit2})
+   `;
+};
 
 // create program
 const program = new converter;

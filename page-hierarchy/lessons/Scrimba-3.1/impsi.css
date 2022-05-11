@@ -22,7 +22,7 @@ body {
 #block-top {
   background: var(--background-gradient);
   height: calc( 100% * 3/7);
-  min-height: 4em;
+  min-height: 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,15 +30,19 @@ body {
 }
 
 .heading {
-  text-align: center;
-  
+  height: 40%;
+  align-items: center;
+  padding-top: 5%;
   /* fixes font size fixed to width of veiwport, might not be a good idea */
   font-size: calc(100vw * 1/15);
+  margin: 0px;
 }
 
 #input-field {
   background-color: transparent;
-  width: 95%; /* this overflows after 6 digits */
+  width: 95%;
+  height: 40%;
+  min-height: 6.5rem;
   border: 0;
   font-size: 6.5rem;
   text-align: center;
@@ -46,6 +50,7 @@ body {
   font-weight: 800;
   line-height: 24px;
   letter-spacing: 0em;
+  padding-bottom: 5%;
 }
 
 #input-field::placeholder {
@@ -55,19 +60,23 @@ body {
 
 #block-bottom {
   min-height: calc(100% * 7/14);
-  padding: calc(100% * 1/14) 0px;
+  padding: calc(100% * 1/20) 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .info-block-wrapper {
   text-align: center;
-  padding: 2%;
+  width: 95vw;
+  padding: 1.2em 0px;
 }
 
 .output-typography {
+  padding: 1em 0px;
+
   color: var(--text-toned-down-color);
   font-weight: var(--text-toned-down-weight);
   font-size: var(--text-toned-down-size);

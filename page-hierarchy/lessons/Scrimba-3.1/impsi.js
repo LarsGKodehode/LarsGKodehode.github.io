@@ -9,6 +9,7 @@ class conversionEntry {
   };
 };
 
+
 // program class  
 class converter {
   // Public
@@ -30,7 +31,7 @@ class converter {
     return true;
   };
   
-  // converts currentInput to all registered types
+  // converts currentInput to all registered types with 3 decimal precision
   #convertAll() {
     for (const entry in conversionBook) {
       this.#convertedInput[entry] = [
@@ -42,37 +43,35 @@ class converter {
   // updates output fields
   #updateOutput() {
     for (const entry in conversionBook) {
-      outputFields[entry * 4 + 0].innerHTML = `${this.#currentInput} ${conversionBook[entry].unit1}`;
-      outputFields[entry * 4 + 1].innerHTML = `${this.#convertedInput[entry][0]} ${conversionBook[entry].unit2}`;
-      outputFields[entry * 4 + 2].innerHTML = `${this.#currentInput} ${conversionBook[entry].unit2}`;
-      outputFields[entry * 4 + 3].innerHTML = `${this.#convertedInput[entry][1]} ${conversionBook[entry].unit1}`;
+      outputFields[entry * 4 + 0].textContent = `${this.#currentInput} ${conversionBook[entry].unit1}`;
+      outputFields[entry * 4 + 1].textContent = `${this.#convertedInput[entry][0]} ${conversionBook[entry].unit2}`;
+      outputFields[entry * 4 + 2].textContent = `${this.#currentInput} ${conversionBook[entry].unit2}`;
+      outputFields[entry * 4 + 3].textContent = `${this.#convertedInput[entry][1]} ${conversionBook[entry].unit1}`;
     };
   };
 };
 
+// init variables
 // array of all conversions
 let conversionBook = [];
 // inserts conversions
 conversionBook.push(new conversionEntry("Length", "Meter", "Feet", 0.3048));
 conversionBook.push(new conversionEntry("Volume", "Litre", "Imperial Gallon", 4.54609));
 conversionBook.push(new conversionEntry("Mass", "Kilogram", "Pound", 0.45359237));
-
 // selects input field
 const input = document.getElementById("input-field")
 // selects output fields
 const outputHeader = document.getElementsByClassName("info-block-description");
 const outputFields = document.getElementsByClassName("output-field");
-
 // preformat header field
-// ugly wrapping in code
+// this is ugly code formating
 for (entry in conversionBook) {
-  outputHeader[entry].innerHTML =
-  `
-  ${conversionBook[entry].type}
+  outputHeader[entry].textContent =
+  `${conversionBook[entry].type}
    (${conversionBook[entry].unit1}/
-   ${conversionBook[entry].unit2})
-   `;
+   ${conversionBook[entry].unit2})`;
 };
+
 
 // create program
 const program = new converter;
@@ -81,6 +80,5 @@ const program = new converter;
 function programWrapper() {
   program.run();
 };
-
 // run program on input field change
 input.addEventListener("input", programWrapper);

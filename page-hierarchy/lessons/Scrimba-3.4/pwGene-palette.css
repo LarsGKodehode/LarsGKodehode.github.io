@@ -1,0 +1,14 @@
+:root {
+  /* page color pallete */
+  --page-color1: #1F2937;
+  --page-color2: #273549;
+  --page-color-accent: #10B981;
+
+  /* page typography */
+  --page-text-color1: #FFFFFF;
+  --page-text-color2: #4ADF86;
+  --page-text-color1-var1: #D5D4D8;
+
+  --page-text-family-header: 'Karla';
+  --page-text-family-info: Inter;
+}

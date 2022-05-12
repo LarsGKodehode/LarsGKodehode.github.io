@@ -55,6 +55,7 @@ class converter {
 // array of all conversions
 let conversionBook = [];
 // inserts conversions
+// currently only 3 fields
 conversionBook.push(new conversionEntry("Length", "Meter", "Feet", 0.3048));
 conversionBook.push(new conversionEntry("Volume", "Litre", "Imperial Gallon", 4.54609));
 conversionBook.push(new conversionEntry("Mass", "Kilogram", "Pound", 0.45359237));
@@ -65,6 +66,7 @@ const outputHeader = document.getElementsByClassName("info-block-description");
 const outputFields = document.getElementsByClassName("output-field");
 // preformat header field
 // this is ugly code formating
+// also goes out of bounds when extending conversionBook without editing .html 
 for (entry in conversionBook) {
   outputHeader[entry].textContent =
   `${conversionBook[entry].type}

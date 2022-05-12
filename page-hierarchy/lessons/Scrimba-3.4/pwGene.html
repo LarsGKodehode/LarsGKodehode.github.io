@@ -1,0 +1,55 @@
+<!-- template v0.1 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="pwGene" content="Never remember your password again">
+
+  <title>pwGene</title>
+  
+  <!-- external styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@800&display=swap" rel="stylesheet">
+  <!-- internal styles -->
+  <link rel="stylesheet" href="pwGene-palette.css">
+  <link rel="stylesheet" href="pwGene.css">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/svg" href="/content/icon/icon-original.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/content/icon/icon-apple-180x180.png">
+</head>
+
+<body>
+  <main id="content-base">
+
+    <!-- text stuff -->
+    <div id="header-wrapper">
+      <div id="header"></div>
+      <header>Generate a</header>
+      <header><span>random pasword</span></header>
+      <p>Get your next easily forgettable password here!</p>
+    </div>
+
+    <!-- input button -->
+    <input id="submit-button" type="button" value="Generate password" onclick="submit()"></input>
+
+    <!-- nice separator -->
+    <hr id="seperating-line">
+
+    <!-- wher the generated output goes -->
+    <div id="output-fields" class="grid-wrapper">
+      <input type="text" class="output-field" readonly placeholder="&#183;&#183;&#183;">
+      <input type="text" class="output-field" readonly placeholder="&#183;&#183;&#183;">
+      <input type="text" class="output-field" readonly placeholder="&#183;&#183;&#183;">
+      <input type="text" class="output-field" readonly placeholder="&#183;&#183;&#183;">
+    </div>
+
+  </main>
+  <script defer src="pwGene.js"></script>
+</body>
+
+</html>

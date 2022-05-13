@@ -16,15 +16,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Karla:wght@800&display=swap" rel="stylesheet">
   <!-- internal styles -->
   <link rel="stylesheet" href="pwGene-palette.css">
-  <link rel="stylesheet" href="pwGene.css">
+  <link id="sylesheet-main1" rel="stylesheet" href="pwGene.css">
 
   <!-- favicon -->
   <link rel="icon" type="image/svg" href="/content/icon/icon-original.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/content/icon/icon-apple-180x180.png">
 </head>
 
-<body>
+<!-- defaults to dark theme -->
+<body data-theme="dark">
   <main id="content-base">
+
+    <!-- always present butten, in own context -->
+    <div id="theme-switcher-wrapper">
+      <input id="theme-switcher" type="button" value="&#9728;">
+    </div>
 
     <!-- text stuff -->
     <div id="header-wrapper">
@@ -34,13 +40,13 @@
       <p>Get your next easily forgettable password here!</p>
     </div>
 
-    <!-- input button -->
-    <input id="submit-button" type="button" value="Generate password" onclick="submit()"></input>
+    <!-- button to generate unmemorable passwords -->
+    <input id="submit-button" type="button" value="Generate password" onclick="generatePassword()"></input>
 
     <!-- nice separator -->
     <hr id="seperating-line">
 
-    <!-- wher the generated output goes -->
+    <!-- where the generated output goes -->
     <div id="output-fields" class="grid-wrapper">
       <input type="text" class="output-field" readonly placeholder="&#183;&#183;&#183;">
       <input type="text" class="output-field" readonly placeholder="&#183;&#183;&#183;">

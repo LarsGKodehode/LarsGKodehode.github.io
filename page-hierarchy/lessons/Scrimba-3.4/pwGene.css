@@ -39,7 +39,7 @@ span {
 }
 
 #submit-button:active {
-  transform: translate3d(0px, .05em, 1em);
+  transform: translate3d(.1em, .04em, 1em);
 }
 
 hr {
@@ -62,18 +62,38 @@ hr {
 .output-field {
   color: var(--page-text-color2);
   text-align: center;
+  border: 0px;
+  min-width: 20em;
+  width: 40%;
+  padding: .5em 1em;
+  margin: 2em;
+  border-radius: 6px;
+
+  /* button icon */
   background-color: var(--page-color2);
   background-image: url(content/icon-dots.svg);
   background-repeat: no-repeat;
   background-position: center;
-  border: 0px;
-  min-width: 20em;
-  padding: .5em 1em;
-  margin: 2em;
-  border-radius: 6px;
 }
 
 .output-field::placeholder {
   color: #202B3C;
   opacity: 1;
+}
+
+#theme-switcher-wrapper {
+  position: fixed;
+  top: 2em;
+  right: 2em;
+}
+
+#theme-switcher {
+  border-radius: 1em;
+  background-color: var(--page-color-accent);
+  color: var(--page-text-color1);
+  font-size: 200%;
+}
+
+#theme-switcher:active {
+  transform: translate3d(.05em, .05em, 0em);
 }

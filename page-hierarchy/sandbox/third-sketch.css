@@ -1,0 +1,154 @@
+body {
+  font-family: "Patua One", ui-rounded;
+
+  margin: 0px;
+  padding: 0px 3rem;
+  /* display: flex;
+  flex-direction: column; */
+  background-color: var(--color-5);
+  color: var(--color-text-1);
+  
+  /* MOVE: need to be in a wrapper around the content */
+  /* enforces scroll snapping behavior */
+  height: 100vh;
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  /* MOVE: need to be in a wrapper around the content */
+}
+
+.scroll-snap-point {
+  scroll-snap-align: start;
+}
+
+/* Typography */
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* site wide link conformity */
+a:link {
+  text-decoration: none;
+  color: var(--color-text-1);
+}
+
+a:visited {
+  color: var(--color-text-1);
+}
+
+@media (any-hover) {
+  a:hover {
+    transform: translate3d(10em, 10em, 10em);
+}}
+
+a:active {
+  transform: translate3d(10em, 10em, 10em);
+}
+
+/* landing point screen container */
+#entrypoint-container {
+  height: 100vh;
+  background-color: var(--color-2);
+  background-color: linear-gradient(90deg, black 100%, transparent 100%);
+  background-color: linear-gradient(270deg, black 100%, transparent 100%);
+  align-items: center;
+  box-sizing: border-box;
+}
+
+
+h1 {
+  text-align: center;
+  margin: 4em;
+  box-sizing: border-box;
+}
+
+/* portefolio carusel */
+#carusel-container {
+  height: 100vh;
+  background-color: var(--color-3);
+}
+
+/* footer */
+#footer {
+  height: 100vh;
+  background-color: var(--color-4);
+}
+
+/* navigation interface */
+#navigation-container {
+  /* sets container to cover whole screen */
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+ 
+  /* content layout placement */
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 1em;
+
+  /* disable container for clicking */
+  pointer-events: none;
+}
+
+#logo-link {
+  border: 2px solid green;
+  /* placement of item in grid */
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  /* size of element */
+  width: 100%;
+  max-width: 10vw;
+  aspect-ratio: 1/1; /* caniuse.com shows pretty good coverage for this */
+}
+
+#searchbar {
+  border: 2px solid green;
+  /* placement of item in grid */
+  grid-column: 7 / 16;
+  grid-row: 1 / 3;
+  /* size of element */
+  height: 3rem;
+  border-radius: 0px 0px 4em 4em;
+  padding: .5em 4em;
+}
+
+#nav-bar {
+  border: 2px solid green;
+  /* placement of item in grid */
+  grid-column: -1 / -2;
+  grid-row: 3 / -3;
+
+  /* placement of content */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+li {
+  list-style-type: none;
+}
+
+#external-resources {
+  border: 2px solid green;
+  /* placement of item in grid */
+  grid-column: 1 / 2;
+  grid-row: -5 / -1;
+}

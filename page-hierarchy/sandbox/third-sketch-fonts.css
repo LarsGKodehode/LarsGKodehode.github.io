@@ -1,0 +1,6 @@
+@font-face {
+  font-family: "Patua One";
+  src:
+  url("/content/fonts/patua-one/PatuaOne-Regular.woff2") format('woff2'),
+  url("/content/fonts/patua-one/PatuaOne-Regular.ttf") format('ttf');
+}

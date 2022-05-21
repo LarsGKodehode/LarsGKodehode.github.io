@@ -1,4 +1,4 @@
-// conversion object
+// object containg conversion types, names and values
 class conversionEntry {
   constructor(type, unit1, unit2, unit2DivideUnit1) {
     this.type = type;
@@ -9,13 +9,12 @@ class conversionEntry {
   };
 };
 
-
 // program class  
 class converter {
   // Public
   run() {
-    if (!this.#getInputInt() === true) {return}; // abort if can't parse input to real number
-    this.#convertAll();
+    if (!this.#getInputNumber() === true) {return}; // abort if can't parse input to real number
+    this.#convertAll(outputPrecision); // converts input with precision of argument
     this.#updateOutput();
   };
   
@@ -24,23 +23,24 @@ class converter {
   #convertedInput = []; // stores converted values in a convenient format
   
   // tests and parses input to number
-  #getInputInt() {
+  #getInputNumber() {
     let newInput = Number(input.value);
     if (!(typeof(newInput)) === "number" || (isNaN(newInput))) {return false}; // TODO: might get away with only checking for NAN
     this.#currentInput = newInput;
     return true;
   };
   
-  // converts currentInput to all registered types with 3 decimal precision
-  #convertAll() {
+  // converts currentInput to all registered types with variable precision
+  #convertAll(precision) {
     for (const entry in conversionBook) {
       this.#convertedInput[entry] = [
-        Number.parseFloat(this.#currentInput * conversionBook[entry].ratio1).toFixed(3),
-        Number.parseFloat(this.#currentInput * conversionBook[entry].ratio2).toFixed(3)];
+        Number.parseFloat(this.#currentInput * conversionBook[entry].ratio1).toFixed(precision),
+        Number.parseFloat(this.#currentInput * conversionBook[entry].ratio2).toFixed(precision)];
     };
   };
 
   // updates output fields
+  // TODO: not good but works, rewrites whole field and rebuilds DOM 
   #updateOutput() {
     for (const entry in conversionBook) {
       outputFields[entry * 4 + 0].textContent = `${this.#currentInput} ${conversionBook[entry].unit1}`;
@@ -51,20 +51,21 @@ class converter {
   };
 };
 
+
 // init variables
-// array of all conversions
+const outputPrecision = 3;
 let conversionBook = [];
 // inserts conversions
-// currently only 3 fields
 conversionBook.push(new conversionEntry("Length", "Meter", "Feet", 0.3048));
 conversionBook.push(new conversionEntry("Volume", "Litre", "Imperial Gallon", 4.54609));
 conversionBook.push(new conversionEntry("Mass", "Kilogram", "Pound", 0.45359237));
 // selects input field
 const input = document.getElementById("input-field")
 // selects output fields
+// TODO: dynamically build output fields based on available conversionBook entries
 const outputHeader = document.getElementsByClassName("info-block-description");
 const outputFields = document.getElementsByClassName("output-field");
-// preformat header field
+// preformat header fields
 // this is ugly code formating
 // also goes out of bounds when extending conversionBook without editing .html 
 for (entry in conversionBook) {

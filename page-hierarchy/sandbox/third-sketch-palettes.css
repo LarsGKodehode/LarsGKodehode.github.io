@@ -1,0 +1,28 @@
+/* colour palettes */
+body[data-theme = "theme-dark"] {
+  --color-1: #BB4300;
+  --color-2: #450B03;
+  --color-3: #2E0012;
+  --color-4: #3E0345;
+  --color-5: #1C033B;
+  /* contrast color to respective colors */
+  --color-text-1: #F6F7FA;
+  --color-text-2: #DDDEE1;
+  --color-text-3: #BDBEC0;
+  --color-text-4: #CBCCCE;
+  --color-text-5: #BDBEC0;
+}
+
+body[data-theme = "theme-royal"] {
+  --color-1: #BB4300;
+  --color-2: #450B03;
+  --color-3: #2E0012;
+  --color-4: #3E0345;
+  --color-5: #1C033B;
+  /* contrast color to respective colors */
+  --color-text-1: #F6F7FA;
+  --color-text-2: #DDDEE1;
+  --color-text-3: #BDBEC0;
+  --color-text-4: #CBCCCE;
+  --color-text-5: #BDBEC0;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>third sketch</title>
+  
+  <link rel="icon" type="image/svg" href="/content/icon/icon-original.svg">
+
+  <!-- stylesheets -->
+  <link rel="stylesheet" href="third-sketch-palettes.css">
+  <link rel="stylesheet" href="third-sketch-fonts.css">
+  <link rel="stylesheet" href="third-sketch.css">
+  <link href="/content/fonts/patua-one/PatuaOne-Regular.woff2" rel="stylesheet" type="font/woff2">
+  
+</head>
+
+<body data-theme="theme-dark">
+<!-- need to wrap the entire site inside a container to get snap functionality to work -->
+
+  <!-- entrypoint content -->
+  <div id="entrypoint-container" class="scroll-snap-point">
+    <h1><a href="third-sketch.html">WELCOME</a></h1>
+  </div>
+
+  <!-- portefolio carusel -->
+  <section id="carusel-container" class="scroll-snap-point">
+    <div id="carusel">
+
+      <!-- project 1 -->
+      <span class="carusel-card">
+        <article class="portefolio-container">
+          <img src="" alt="" class="portefolio-image">
+          <h3 class="portefolio-header">Header Text</h3>
+          <p class="portefolio-short-description">
+            Actual description of project. Some descriptive and reflective words around the particular project. Need to be selfcontained.
+          </p>
+        </article>
+      </span>
+
+      <!-- project 2 -->
+      <span class="carusel-card">
+        <article class="portefolio-container">
+          <img src="" alt="" class="portefolio-image">
+          <h3 class="portefolio-header">Header Text</h3>
+          <p class="portefolio-short-description">
+            Actual description of project. Some descriptive and reflective words around the particular project. Need to be selfcontained.
+          </p>
+        </article>
+      </span>
+
+      <!-- project 3 -->
+      <span class="carusel-card">
+        <article class="portefolio-container">
+          <img src="" alt="" class="portefolio-image">
+          <h3 class="portefolio-header">Header Text</h3>
+          <p class="portefolio-short-description">
+            Actual description of project. Some descriptive and reflective words around the particular project. Need to be selfcontained.
+          </p>
+        </article>
+      </span>
+
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer id="footer" class="scroll-snap-point">
+
+  </footer>
+
+  <!-- seperate container for navigation -->
+  <nav id="navigation-container">
+
+    <!-- contains logo and link to frontpage -->
+    <div id="logo-link">LOGO</div>
+    
+    <!-- top search bar -->
+    <div id="searchbar">
+      <!-- search icon -->
+      <span>
+
+      </span>
+      <!-- search field -->
+      <span>
+        <input id="search-bar" type="text" placeholder="query here">
+      </span>
+      <!-- theme switcher -->
+      <span>
+
+      </span>
+    </div>
+
+    <!-- internal page navigation -->
+    <menu id="nav-bar">
+      <li class="nav-bar-icon"><a href="" class="nav-bar-link">1</a></li>
+      <li class="nav-bar-icon"><a href="" class="nav-bar-link">2</a></li>
+      <li class="nav-bar-icon"><a href="" class="nav-bar-link">3</a></li>
+    </menu>
+
+    <!-- external resources "github", "linkdin profile" -->
+    <menu id="external-resources">EXTERNAL</menu>
+  </nav>
+
+  <script defer src="third-sketch.js"></script>
+</body>
+</html>

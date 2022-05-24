@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice App</title>
+
+  <link rel="stylesheet" href="invoice-app-palettes.css">
+  <link rel="stylesheet" href="invoice-app.css">
+</head>
+
+<body data-theme="smoke">
+  <header id="header-wrapper">
+    <h1>Invoice creator</h1>
+    <h2>Thanks for choosing GoodCorp, LLC!</h2>
+  </header>
+
+  <div id="choice-consequence-wrapper">
+    <section id="button-select-job">
+      <input type="button" class="choice-button" value="Wash Car: $10">
+      <input type="button" class="choice-button" value="Mow Lawn: $20">
+      <input type="button" class="choice-button" value="Pull Weeds: $30">
+    </section>
+
+    <div id="total-wrapper">
+      <table id="work-selected">
+        <thead>
+          <tr>
+            <th class="table header task left" colspan="1">TASK</th>
+            <th class="table header cost right" colspan="1">TOTAL</th>
+          </tr>
+        </thead>
+        
+        <tbody id="cost-overview">
+          <td class="table entry task left">Wash<input type="button" class="entry-remove" value="Remove"></td>
+          <td class="table entry cost right"><span class="currency-sign">$</span>10</td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<hr id="seperator">
+
+  <div id="sum-submit-wrapper">
+    <div id="sum-wrapper">
+      <table id="checkout-info">
+        <thead>
+          <tr>
+            <th class="table header info left" colspan="1">NOTES</th>
+            <th class="table header sum" right colspan="1">TOTAL AMOUNT</th>
+          </tr>
+        </thead>
+        
+        <tbody id="info-sum">
+          <td class="table entry info left">We accept cash, credit card, or PayPal</td> <!-- sic -->
+          <td class="table entry sum" right><span class="currency-sign">$</span>10</td>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="submit-wrapper">
+      <input type="submit" value="&#x2709; Send Invoice">
+    </div>
+  </div>
+  
+  <script defer src="invoice-app.js"></script>
+</body>
+</html>

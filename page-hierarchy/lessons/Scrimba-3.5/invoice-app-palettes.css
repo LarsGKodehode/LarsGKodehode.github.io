@@ -1,0 +1,15 @@
+body[data-theme = "smoke"] {
+  /* page color pallete */
+  --page-color-background: #1F2937;
+  --page-color-highlight: #3A69D2;
+  --page-color-accent: #D1D4F4;
+  --page-color-seperator: #C3C6DB;
+
+  --page-color-button-feedback: #3e5c9d;
+
+  /* page typography */
+  --text-color-background: #F5F5F5;
+  --text-color-background-alt: #D5D4D8;
+  --text-color-highlight: #FFFFFF;
+  --text-color-accent: #4A4E74;
+}

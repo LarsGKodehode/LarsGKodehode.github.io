@@ -17,12 +17,13 @@ const loremStreng =
   "Lorem Ipsum er rett og slett dummytekst fra og for trykkeindustrien. Lorem Ipsum har vært bransjens standard for dummytekst helt siden 1500-tallet, da en ukjent boktrykker stokket en mengde bokstaver for å lage et prøveeksemplar av en bok. Lorem Ipsum har tålt tidens tann usedvanlig godt, og har i tillegg til å bestå gjennom fem århundrer også tålt spranget over til elektronisk typografi uten vesentlige endringer. Lorem Ipsum ble gjort allment kjent i 1960-årene ved lanseringen av Letraset-ark med avsnitt fra Lorem Ipsum, og senere med sideombrekkingsprogrammet Aldus PageMaker som tok i bruk nettopp Lorem Ipsum for dummytekst.";
 
 function oppgave1() {
-  const strengMaksLengde = 200;
+  const maksOrd = 30;
+  const loremStrengOrd = loremStreng.split("");
 
-  if (loremStreng.length > strengMaksLengde) {
-    console.log(`Strengen er lang, med mer enn ${strengMaksLengde} ord`);
+  if (loremStrengOrd.length > maksOrd) {
+    console.log(`Strengen er lengre enn ${maksOrd} ord, med sine ${loremStrengOrd.length} ord`);
   } else {
-    console.log(`Strengen er ${strengMaksLengde} ord eller kortere`);
+    console.log(`Strengen har ${loremStrengOrd.length} ord, det er mindre enn ${maksOrd} ord`);
   };
 };
 

@@ -1,5 +1,11 @@
 // algorithms for testing
 
+// container for algorithms
+const algorithmList = [
+  // simple test cas for faulty algorithm
+  bogusImplementation,
+];
+
 // simple algorithm translated directly from task
 function simpleImplementation(length, arr) {
   for (let i = 1; i <= length; i++) {
@@ -10,6 +16,7 @@ function simpleImplementation(length, arr) {
     };
   };
 };
+algorithmList.push(simpleImplementation);
 
 // some more tought put into this one
 function fillFirstThenReplace(length, arr) {
@@ -33,7 +40,7 @@ function fillFirstThenReplace(length, arr) {
     arr[i] += "Buzz";
   };
 };
-
+algorithmList.push(fillFirstThenReplace);
 
 
 function bogusImplementation (length, arr){
@@ -132,15 +139,6 @@ const tests = [
   {index: 7, value: 7},
   {index: 15, value: "FizzBuzz"},
   {index: 150, value: "FizzBuzz"},
-];
-
-
-const algorithmList = [
-  simpleImplementation,
-  fillFirstThenReplace,
-  
-  // simple test cas for faulty algorithm
-  bogusImplementation,
 ];
 
 // run program

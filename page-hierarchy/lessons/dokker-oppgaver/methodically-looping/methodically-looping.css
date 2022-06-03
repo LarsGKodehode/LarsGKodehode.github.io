@@ -1,0 +1,41 @@
+html body {
+  margin: 0px;
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgb(19, 29, 30);
+  color: beige;
+  
+  min-height: 100%;
+}
+
+#console-ui {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+
+  padding: 1em;
+}
+
+.button {
+  padding: .5em 2em;
+
+  border-radius: 20px;
+}
+
+#console-display {
+  padding: 0em 2em;
+  border: solid 2px rgba(0, 0, 0, 0.522);
+  border-radius: 3%;
+
+  width: 60em;
+  height: 85vh;
+
+  overflow-y: scroll;
+
+  background-color: rgba(0, 0, 0, 0.315);
+}

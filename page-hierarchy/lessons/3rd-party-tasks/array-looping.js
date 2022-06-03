@@ -158,4 +158,4 @@ function programRun() {
 const inputRun = document.getElementById("button-run");
 inputRun.addEventListener("click", programRun);
 const inputClear = document.getElementById("button-clear");
-inputClear.addEventListener("click", programClear)
+inputClear.addEventListener("click", programClear);

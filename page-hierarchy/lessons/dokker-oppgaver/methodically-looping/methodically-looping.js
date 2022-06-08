@@ -248,8 +248,7 @@ const targetPlane = document.getElementById("console-display");
 
 // render/insert in html element
 function render(target, toDisplay) {
-  let renderChunk = [];
-  renderChunk.push(toDisplay);
+  let renderChunk = [toDisplay];
   
   publish(target, renderChunk);
 };

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "bass-drum",
+    "type": "floor",
+    "icon": "bass-drum.svg",
+    "sound": "/content/audio/drumkit/bass-drum.wav",
+    "keyCode":"KeyA"
+  },
+  
+  {
+    "name": "floor-tom",
+    "type": "tom",
+    "icon": "floor-tom.svg",
+    "sound": "/content/audio/drumkit/tom-floor.wav",
+    "keyCode":"KeyS"
+  },
+  
+  {
+    "name": "clap",
+    "type": "cymbal",
+    "icon": "cymbal-clap.svg",
+    "sound": "/content/audio/drumkit/cymbal-clap.wav",
+    "keyCode":"KeyD"
+  },
+  
+  {
+    "name": "tink",
+    "type": "tom",
+    "icon": "tink.svg",
+    "sound": "/content/audio/drumkit/tink.wav",
+    "keyCode":"KeyF"
+  },
+  
+  {
+    "name": "snare-drum",
+    "type": "snare",
+    "icon": "snare-drum-svg",
+    "sound": "/content/audio/drumkit/snare-snare.wav",
+    "keyCode":"KeyG"
+  },
+  
+  {
+    "name": "open-hat",
+    "type": "cymbal",
+    "icon": "open-hat.svg",
+    "sound": "/content/audio/drumkit/cymbal-open-hat.wav",
+    "keyCode":"KeyG"
+  },
+
+  {
+    "name": "ride-cymbal",
+    "type": "cymbal",
+    "icon": "ride-cymbal.svg",
+    "sound": "/content/audio/drumkit/cymbal-ride.wav",
+    "keyCode":"KeyH"
+  },
+  
+  {
+    "name": "hi-hat",
+    "type": "cymbal",
+    "icon": "hi-hat.svg",
+    "sound": "/content/audio/drumkit/cymbal-hi-hat.wav",
+    "keyCode":"KeyJ"
+  },
+    
+  {
+    "name": "big-bada-boom",
+    "type": "explosives",
+    "icon": "explosion.svg",
+    "keyCode":"KeyL"
+  }
+]

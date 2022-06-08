@@ -1,0 +1,49 @@
+html {
+  margin: 0px;
+}
+
+body {
+  background-color: rgb(46, 93, 67);
+}
+
+#submit-section {
+  width: 100%;
+}
+
+#drum-kit-wrapper {
+  max-height: 60vh;
+  max-width: 60vw;
+}
+
+#drum-kit {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10%;
+  margin: 5em;
+  max-height: 80%;
+}
+
+.sound-tool {
+  background-color: #694b28;
+  border: white solid 2px;
+  border-radius: 50%;
+
+
+  color: beige;
+  text-align: center;
+
+  padding: 10%;
+
+  width: fit-content;
+}
+
+.sound-tool:hover {
+  border: blue 2px solid;
+}
+
+#gui-buttons-wrapper {
+  max-height: 30vh;
+  width: 100%;
+}
+

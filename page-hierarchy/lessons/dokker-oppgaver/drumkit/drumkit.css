@@ -1,36 +1,88 @@
+/* hack to set every element to use border-box as default */
+* {
+  box-sizing: border-box;
+}
+
 html {
   margin: 0px;
+  width: 100%;
+  height: 100%;
 }
 
 body {
-  background-color: rgb(46, 93, 67);
+  display: grid;
+  grid-template-columns: 2fr 7fr 1fr;
+  grid-template-rows: 2fr 7fr 1fr;
+
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+
+  background-color: #3a1354;
 }
 
-#submit-section {
+#nav-top {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  
+  background-color: #424D4D;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+ul {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: end;
+
+  margin: 2% 2%;
+  width: 40%;
+}
+
+li {
+  list-style-type: none;
+  padding: 0px 5%;
+}
+
+.icon-standard {
+  filter: invert(13%) sepia(32%) saturate(3399%) hue-rotate(254deg) brightness(93%) contrast(106%);
+}
+
+#drumkit-wrapper {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+
+  height: 100%;
   width: 100%;
 }
 
-#drum-kit-wrapper {
-  max-height: 60vh;
-  max-width: 60vw;
+#gui-buttons-wrapper {
+  grid-column: 1 / -1;
+  grid-row: 3 / -1;
 }
 
 #drum-kit {
-  box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
+  width: 100%;
+  height: 100%;
+
+  padding: 5%;
+
   gap: 10%;
-  margin: 5em;
-  max-height: 80%;
 }
 
-.sound-tool {
-  background-color: #694b28;
+.instrument {
+  background-color: #867562;
   border: white solid 2px;
   border-radius: 50%;
 
 
-  color: beige;
+  color: #D9FCFC;
   text-align: center;
 
   padding: 10%;
@@ -38,12 +90,6 @@ body {
   width: fit-content;
 }
 
-.sound-tool:hover {
+.instrument:hover {
   border: blue 2px solid;
 }
-
-#gui-buttons-wrapper {
-  max-height: 30vh;
-  width: 100%;
-}
-

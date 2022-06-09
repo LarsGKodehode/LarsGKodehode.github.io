@@ -4,7 +4,7 @@
     "type": "floor",
     "icon": "bass-drum.svg",
     "sound": "/content/audio/drumkit/bass-drum.wav",
-    "keyCode":"KeyA"
+    "inputKey":"KeyA"
   },
   
   {
@@ -12,7 +12,7 @@
     "type": "tom",
     "icon": "floor-tom.svg",
     "sound": "/content/audio/drumkit/tom-floor.wav",
-    "keyCode":"KeyS"
+    "inputKey":"KeyS"
   },
   
   {
@@ -20,7 +20,7 @@
     "type": "cymbal",
     "icon": "cymbal-clap.svg",
     "sound": "/content/audio/drumkit/cymbal-clap.wav",
-    "keyCode":"KeyD"
+    "inputKey":"KeyD"
   },
   
   {
@@ -28,7 +28,7 @@
     "type": "tom",
     "icon": "tink.svg",
     "sound": "/content/audio/drumkit/tink.wav",
-    "keyCode":"KeyF"
+    "inputKey":"KeyF"
   },
   
   {
@@ -36,7 +36,7 @@
     "type": "snare",
     "icon": "snare-drum-svg",
     "sound": "/content/audio/drumkit/snare-snare.wav",
-    "keyCode":"KeyG"
+    "inputKey":"KeyG"
   },
   
   {
@@ -44,7 +44,7 @@
     "type": "cymbal",
     "icon": "open-hat.svg",
     "sound": "/content/audio/drumkit/cymbal-open-hat.wav",
-    "keyCode":"KeyG"
+    "inputKey":"KeyG"
   },
 
   {
@@ -52,7 +52,7 @@
     "type": "cymbal",
     "icon": "ride-cymbal.svg",
     "sound": "/content/audio/drumkit/cymbal-ride.wav",
-    "keyCode":"KeyH"
+    "inputKey":"KeyH"
   },
   
   {
@@ -60,13 +60,13 @@
     "type": "cymbal",
     "icon": "hi-hat.svg",
     "sound": "/content/audio/drumkit/cymbal-hi-hat.wav",
-    "keyCode":"KeyJ"
+    "inputKey":"KeyJ"
   },
     
   {
     "name": "big-bada-boom",
     "type": "explosives",
     "icon": "explosion.svg",
-    "keyCode":"KeyL"
+    "inputKey":"Not Implemented"
   }
 ]

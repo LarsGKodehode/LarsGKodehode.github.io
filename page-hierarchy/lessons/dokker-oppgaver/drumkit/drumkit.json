@@ -61,12 +61,5 @@
     "icon": "hi-hat.svg",
     "sound": "/content/audio/drumkit/cymbal-hi-hat.wav",
     "inputKey":"KeyJ"
-  },
-    
-  {
-    "name": "big-bada-boom",
-    "type": "explosives",
-    "icon": "explosion.svg",
-    "inputKey":"Not Implemented"
   }
 ]

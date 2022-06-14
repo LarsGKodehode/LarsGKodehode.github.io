@@ -1,0 +1,52 @@
+/*
+Content:
+  1. Typograhpy
+  2. Color Palette
+    - Basic
+    - Actions
+*/
+
+
+/* 1. TYPOGRAPY */
+*{
+  font-family: 'Quantico', sans-serif;
+}
+
+:root {
+  --font-size-h1: 68px;
+  --font-size-h2: 42px;
+  --font-size-h3: 26px;
+  --font-size-p: 16px;
+  --font-size-small: 10px;
+}
+
+/* 2. COLOR PALETTES */
+
+/*  - Basic */
+:root {
+  /* background */
+  --color-basic-l2: #AFCCCC;
+  --color-basic-l1: #798C8C;
+  --color-basic-base: #374040;
+  --color-basic-d1: #424D4D;
+  --color-basic-d2: #2C3333;
+  /* font */
+  --color-basic-font-l2: #272F2F;
+  --color-basic-font-l1: #141919;
+  --color-basic-b-fontase: #DFDFDF;
+  --color-basic-font-d1: #D9FCFC;
+  --color-basic-font-d2: #B4D2D2;
+}
+
+
+
+/*  - Actions */
+:root {
+  /* submit */
+  --color-actions-submit: #2CFF5B;
+  --color-actions-font-submit: #00070C;
+  --color-actions-neutral: #37D8D8;
+  --color-actions-font-neutral: #001016;
+  --color-actions-dangerous: #D3071F;
+  --color-actions-font-dangerous: #B9E7DA;
+}

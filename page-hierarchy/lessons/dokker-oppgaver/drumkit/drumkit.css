@@ -30,10 +30,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  border-bottom: rgb(103, 103, 103) solid 2px;
+
+  overflow-x: auto;
 }
 
 ul {
-  box-sizing: border-box;
   display: flex;
   flex-direction: row-reverse;
   justify-content: end;
@@ -50,10 +53,19 @@ li {
 .icon-standard {
   /* sets the color of the svg image */
   filter: invert(13%) sepia(32%) saturate(3399%) hue-rotate(254deg) brightness(93%) contrast(106%);
+  fill: red;
 
-  width: 6em;
-  height: 6em;
+  width: 5em;
+  height: 5em;
 }
+
+@media (any-hover) {
+  .icon-standard:hover {
+    filter: drop-shadow(0 0 0.75rem crimson);
+  }
+}
+
+
 
 #drumkit-wrapper {
   grid-column: 2 / 3;
@@ -81,6 +93,17 @@ li {
 }
 
 .instrument {
+justify-self: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  aspect-ratio: 1 / 1;
+  width: 100%;
+
+  padding: 0px 10%;
+
   background-color: #867562;
   border: white solid 2px;
   border-radius: 50%;
@@ -89,11 +112,11 @@ li {
   color: #D9FCFC;
   text-align: center;
 
-  padding: 5%;
-
   width: fit-content;
 }
 
-.instrument:hover {
-  border: blue 2px solid;
+@media (any-hover) {
+  .instrument:hover {
+    filter: drop-shadow(0 0 0.75rem royalblue);
+  }
 }

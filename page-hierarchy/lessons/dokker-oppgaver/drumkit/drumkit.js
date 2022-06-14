@@ -1,11 +1,11 @@
 // global variables
-let keyRegister = {}; // holds keybinds
+let keyRegister = {}; // holds keybindings
 let drumKit = []; // holds list of drums in kit
 // handles
 const drumkitWrapper = document.getElementById("drumkit-wrapper");
 const drumkitJSON = `drumkit.json`
 
-// drum object
+// drum class
 class drum {
   constructor(object) {
     for (const field in object) {
@@ -21,45 +21,49 @@ class drum {
   playSound() {
     this.sound.currentTime = 0;
     this.sound.play();
-    console.log(`Playing the:\t ${this.name}`);
   };
 };
 
 // keyboard input
 document.addEventListener("keydown", (keyDownEvent) => {
-  if (typeof(keyRegister[`${keyDownEvent.code}`]) === "function"){
-  keyRegister[`${keyDownEvent.code}`]();
+  if (typeof(keyRegister[keyDownEvent.code]) === "function"){
+  keyRegister[keyDownEvent.code]();
   };
 });
 
 // install drums
 function initDrumkit(drums, target) {
   const fragment = new DocumentFragment();
-  const node = document.createElement("div");
+  let node = document.createElement("div");
   node.id = "drum-kit"
   
-  // creates every drum in kit
+  // ataches every drum in kit
   for (const drum of drums) {
-    // add to HTML and set meta tags
-    const newDrum = document.createElement("div");
-    adjustMeta(drum, newDrum);
-    node.appendChild(newDrum);
-    
-    // add on click for drum
-    newDrum.addEventListener("click", () => drum.playSound());
-    // add keybeinding for drum
-    keyRegister[`${drum.inputKey}`] = () => drum.playSound();
+    attachDrum(drum, node);
   };
   
   fragment.appendChild(node);
   target.appendChild(fragment);
 };
 
-function adjustMeta(drum, newDrum) {
+// add to HTML and set meta tags
+function attachDrum(drum, node) {
+  let newDrum = document.createElement("div");
   newDrum.id = drum.name;
   newDrum.className = `${drum.type} instrument`;
-  newDrum.innerHTML = `${drum.name}<br>Keyboard shortcut:<br>${drum.inputKey.charAt(3)}`;
+  newDrum.innerHTML = `${drum.name}<br>shortcut:<br>${drum.inputKey.charAt(3)}`;
+  node.appendChild(newDrum);
+
+  // bind events
+  bindInputEvents(drum, newDrum)
 };
+
+function bindInputEvents(drum, newDrum) {
+  // add on click
+  newDrum.addEventListener("click", () => drum.playSound());
+  // register keybeinding
+  keyRegister[drum.inputKey] = () => drum.playSound();
+}
 
 // TODO: implement a generic JSON grabber
 /*

@@ -53,9 +53,36 @@ function publish(target, texts) {
   target.appendChild(fragment);
 };
 
+
+
 // ------------------------- clear childs ------------------------
 function programClear(target) {
   while(target.firstChild) {
     target.removeChild(target.firstChild);
   };
+};
+
+
+
+// ------------------------- attach Siblings ------------------------
+function createNode(createInfo) {
+  const newNode = document.createElement(createInfo.type);
+  for ([key, value] of Object.entries(createInfo)) {
+    if (key === "type") {continue};
+    newNode[key] = value;
+  };
+  return newNode;
+};
+
+function createNodeSiblings(createInfo, type="div") {
+  if (Array.isArray(createInfo)) {
+    const fullNode = document.createElement(type);
+    
+    for (entry of createInfo) {
+      fullNode.appendChild(createNodeShard(entry));
+    };
+    return fullNode;
+  };
+  
+  return createNodeShard(createInfo);
 };

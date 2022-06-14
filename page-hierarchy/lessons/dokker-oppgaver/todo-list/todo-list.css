@@ -4,12 +4,14 @@ Content:
   2. Header Section
   3. List Section
   4. Interactive Elements
+  5. Generic Classes
  */
 
 /* 1. PAGE DEFAULTS */
+
 * {
-  /* border sizing to remain sane */
-  box-sizing: border-box;
+    /* border sizing for remaining sane */
+    box-sizing: border-box;
 }
 
 html {
@@ -27,6 +29,10 @@ body {
   margin: 0px;
   min-height: 100%;
   width: 100%;
+  
+  /* border sizing for remaining sane */
+  box-sizing: border-box;
+
 
   display: flex;
   flex-direction: column;
@@ -63,9 +69,11 @@ small {
   /* fixes header to top */
   position: sticky;
   top: 0px;
+  z-index: 9999;
   
   background-color: var(--color-basic-d2);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
+  border-bottom: 2px solid black;
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.75);
 
   color: var(--color-basic-font-d2);
 }
@@ -80,6 +88,20 @@ small {
 .form-wrapper > h1 {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, .75);
   margin: 1rem auto;
+}
+
+#header-gui-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+
+  margin: .5em 1em;
+}
+
+#header-gui-wrapper > .button-sort {
+  grid-column: -2 / -1;
+
+  justify-self: end;
 }
 
 
@@ -247,6 +269,16 @@ li {
   text-decoration: underline;
 }
 
+.gui-svg {
+  background-color: var(--color-actions-neutral);
+  filter: grayscale(.8);
+}
+
+/* 5. Generic Classes */
 .hidden {
   visibility: collapse;
+}
+
+.not-clickable {
+  pointer-events: none;
 }

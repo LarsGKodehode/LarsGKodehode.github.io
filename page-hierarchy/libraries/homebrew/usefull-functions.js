@@ -64,7 +64,9 @@ function programClear(target) {
 
 
 
-// ------------------------- attach Siblings ------------------------
+// ------------------------- attach nodes ------------------------
+
+// returns a document node built from object
 function createNode(createInfo) {
   const newNode = document.createElement(createInfo.type);
   for ([key, value] of Object.entries(createInfo)) {
@@ -74,6 +76,7 @@ function createNode(createInfo) {
   return newNode;
 };
 
+// returns a document node built from an array of objects
 function createNodeSiblings(createInfo, type="div") {
   if (Array.isArray(createInfo)) {
     const fullNode = document.createElement(type);
@@ -86,3 +89,21 @@ function createNodeSiblings(createInfo, type="div") {
   
   return createNodeShard(createInfo);
 };
+
+
+
+// ------------------------- Keyboard Shortcuts ------------------------
+
+// keybinding listner
+/*
+currently only handles single key inputs, not key combos
+ */
+document.addEventListener("keydown", (event) => {
+  if (!(event.code in keybindings)) {return}; // check if we have registred a keybinding
+  if (document.activeElement.type === "text") {return}; // check if text input is in focus
+  event.preventDefault(); // bypasses default event
+  keybindings[event.code](event); // run hotkeyed function
+});
+
+// keybindings storage
+let keybindings = {};

@@ -12,6 +12,9 @@ const buttonSubmit = document.getElementById("input-button-submit");
 const buttonSort = document.getElementById("button-sort");
 const listTarget = document.getElementById("task-list-insertion-point");
 let taskList = []; // array to hold tasks for sorting and rerendering
+let sortFunctions = []; // array to hold sorting function to allow cycling through them
+let currentSortIndex = 0;
+
 
 
 
@@ -94,7 +97,7 @@ function addListElement(description, target=listTarget) {
 
   // add interactions
   buttonDone.addEventListener("click", (e) => taskComplete(e));
-  buttonDelete.addEventListener("click", (e) => taskDelete(e));
+  buttonDelete.addEventListener("click", (e) => taskDelete(e, description));
 
   // add to DOM
   target.appendChild(elementWrapper);
@@ -127,6 +130,26 @@ function renderTasks() {
 };
 
 
+// variuos sorting functions
+
+// alphabetically sorting
+function alphabeticallyAscending(a, b) {
+  return a.localeCompare(b);
+};
+sortFunctions.push({
+    sortFunction: alphabeticallyAscending,
+    iconPath: "/content/icon/actions/sort-alpha-ascending.svg",
+  });
+
+function alphabeticallyDescending(a, b) {
+  return b.localeCompare(a);
+};
+sortFunctions.push({
+    sortFunction: alphabeticallyDescending,
+    iconPath: "/content/icon/actions/sort-alpha-descending.svg",
+  });
+
+
 // ----- 4. Funtionality Functions -----
 
 // function sections
@@ -139,37 +162,54 @@ function taskAdd() {
   addListElement(inputField.value);
   // clears input field
   inputField.value = "";
+  // resets sort icon to unsorted
+  buttonSort.src = "/content/icon/actions/sort-unsorted.svg";
 };
 
+/*
+TODO: this is messy and do not adapt well to changes of task component
+ */
 function taskComplete(e) {
   e.target.parentElement.previousSibling.previousSibling.classList.toggle("hidden");
 };
 
-/*
-TODO: actually 'remove element from taskList
-*/
-function taskDelete(e) {
-  e.target.parentElement.parentElement.remove();
+function taskDelete(event, description) {
+  // remove from DOM
+  event.target.parentElement.parentElement.remove();
+  // remove from taskList
+  const index = taskList.indexOf(description);
+  taskList.splice(index, 1);
 };
 
-function focusInput() {
+function focusInput(target, value) {
   inputField.focus();
+};
+
+/*
+TODO: replace cycling hack with linked list
+ */
+function sortList() {
+  taskList.sort((a, b) => sortFunctions[currentSortIndex].sortFunction(a, b));
+  buttonSort.src = sortFunctions[currentSortIndex].iconPath;
+  if (currentSortIndex === 0) {
+    currentSortIndex = 1;
+  } else {
+    currentSortIndex = 0;
+  };
+  renderTasks();
 };
 
 
 // event listener section
 
 // submit form
-buttonSubmit.addEventListener("click", (e) => {
+buttonSubmit.addEventListener("click", () => {
   if (inputField.value.match(/^\s*$/)) {return} // ignores empty input
   taskAdd();
 });
 
 // reorder list
-buttonSort.addEventListener("click", (e) => {
-  taskList.sort();
-  renderTasks();
-});
+buttonSort.addEventListener("click", () => sortList());
 
 
 

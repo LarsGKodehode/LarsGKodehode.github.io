@@ -65,6 +65,7 @@ small {
 /* 2. HEADER SECTION */
 #header-wrapper {
   width: 100%;
+  max-height: 10%;
   padding-bottom: 2em;
   /* fixes header to top */
   position: sticky;
@@ -94,16 +95,11 @@ small {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
+  
+  max-height: 2em;
 
   margin: .5em 1em;
 }
-
-#header-gui-wrapper > .button-sort {
-  grid-column: -2 / -1;
-
-  justify-self: end;
-}
-
 
 
 /* 3. LIST SECTION */
@@ -272,6 +268,15 @@ li {
 .gui-svg {
   background-color: var(--color-actions-neutral);
   filter: grayscale(.8);
+
+  justify-self: center;
+  
+  width: 100%;
+  max-width: min(100%, 5em);
+  height: 100%;
+  min-height: 100%;
+
+  padding: .3em;
 }
 
 /* 5. Generic Classes */

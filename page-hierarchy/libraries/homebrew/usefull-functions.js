@@ -107,3 +107,52 @@ document.addEventListener("keydown", (event) => {
 
 // keybindings storage
 let keybindings = {};
+
+
+
+// ------------------------- Circular Single Linked List ------------------------
+
+class singleLinkedListNode {
+  constructor(data, next = parent.head) {
+    this.data = data;
+    this.next = next;
+  };
+};
+
+class singleLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+  };
+  
+  push(string) {
+    if (tail === null) { // list empty
+    this.head = new singleLinkedListNode(string);
+    this.tail = new singleLinkedListNode(string);
+    } else {
+
+    };
+  };
+  
+  next() {
+    this.tail.next;
+  };
+};
+
+
+
+// tests
+console.clear();
+
+let list = new singleLinkedList;
+
+const cases = ["a", "b", "c"];
+for (entry of cases) {
+  console.log(`Inserting:\t${entry}`);
+  list.push(entry);
+};
+
+console.log(`Correct value is: a\t\t\tActual value is:${list.data}`);
+console.log(`Correct value is: b\t\t\tActual value is:${list.next().data}`);
+console.log(`Correct value is: c\t\t\tActual value is:${list.next().data}`);
+console.log(`Correct value is: a\t\t\tActual value is:${list.next().data}`);

@@ -20,88 +20,40 @@ let currentSortIndex = 0;
 
 
 // ----- 2. Function to append task element -----
-/*
-this function is really messy
-*/
 function addListElement(description, target=listTarget) {
-  // --- Element Wrapper
-  const nodeElementWrapper = {
-    nodeType: "li",
-    className: "list-element-wrapper",
-    draggable: "true",
+  // element definition
+  const newTaskDefinition = `
+  <li class="list-element-wrapper" dragable="true">
+
+    <div class="overlay-task-done hidden not-clickable"></div>
+
+    <div class="texts-wrapper">
+      <p>${description}</p>
+    </div>
+
+    <div class="buttons-wrapper">
+      <input type="button" class="button button-done" value="DONE">
+      <input type="button" class="button button-delete" value="DELETE">
+    </div>
+
+  </li>
+  `;
+
+  // parse new element to DOM node
+  const newTaskNode = new DOMParser().parseFromString(newTaskDefinition, "text/html").body.firstChild;
+
+  // find interactive elements
+  const elementList = newTaskNode.querySelectorAll("input");
+  for (element of elementList) {
+    if (element.className.includes("done")){
+      element.addEventListener("click", (e) => taskComplete(e, newTaskNode));
+    } else if (element.className.includes("delete")) {
+      element.addEventListener("click", (e) => taskDelete(e, description));
+    };
   };
-  const elementWrapper = createNode(nodeElementWrapper);
 
-
-  // --- Overlay
-  const nodeOverlay = {
-    nodeType: "div",
-    className: "overlay-task-done hidden not-clickable",
-  };
-  elementWrapper.appendChild(createNode(nodeOverlay));
-
-
-  // --- Section Texts
-  const nodeTextWrapper = {
-    nodeType: "div",
-    className: "texts-wrapper",
-  };
-  const textWrapper = createNode(nodeTextWrapper);
-  elementWrapper.appendChild(textWrapper);
-
-  // text description
-  const nodeDescriptionElement = {
-    nodeType: "p",
-    textContent: description,
-  };
-  textWrapper.appendChild(createNode(nodeDescriptionElement));
-
-  // text details
-  /*
-  TODO: not yet implemented
-  */
-  // const nodeDetailElement = {
-  //   nodeType: "small",
-  //   className: "button-add-details",
-  //   textContent: "Add details",
-  // };
-  // textWrapper.appendChild(createNode(nodeDetailElement));
-
-  
-  //  --- Section Buttons
-  const nodeButtonWrapper = {
-    nodeType: "div",
-    className: "buttons-wrapper",
-  };
-  const buttonWrapper = createNode(nodeButtonWrapper);
-  elementWrapper.appendChild(buttonWrapper);
-
-  // button done
-  const nodeButtonDone = {
-    nodeType: "input",
-    type: "button",
-    className: "button button-done",
-    value: "DONE",
-  };
-  const buttonDone = createNode(nodeButtonDone);
-  buttonWrapper.appendChild(buttonDone);
-
-  // button delete
-  const nodeButtonDelete = {
-    nodeType: "input",
-    type: "button",
-    className: "button button-delete",
-    value: "DELETE",
-  };
-  const buttonDelete = createNode(nodeButtonDelete);
-  buttonWrapper.appendChild(buttonDelete);
-
-  // add interactions
-  buttonDone.addEventListener("click", (e) => taskComplete(e));
-  buttonDelete.addEventListener("click", (e) => taskDelete(e, description));
-
-  // add to DOM
-  target.appendChild(elementWrapper);
+  // append new task
+  target.appendChild(newTaskNode);
 };
 
 
@@ -124,16 +76,6 @@ function loadTasks() {
   taskList.splice(0, taskList.length, ...loadedTasks);
   renderTasks();
 
-};
-
-// creates a new element from object
-function createNode(createInfo) {
-  const newNode = document.createElement(createInfo.nodeType);
-  for ([key, value] of Object.entries(createInfo)) {
-    if (key === "nodeType") {continue};
-    newNode[key] = value;
-  };
-  return newNode;
 };
 
 // rerenders stored tasks
@@ -186,10 +128,10 @@ function taskAdd() {
 };
 
 /*
-TODO: this is messy and do not adapt well to changes of task component
+TODO: this should dynamically find target to toggle, not hardcoded
 */
-function taskComplete(e) {
-  e.target.parentElement.previousSibling.previousSibling.classList.toggle("hidden");
+function taskComplete(e, node) {
+  node.children[0].classList.toggle("hidden");
 };
 
 function taskDelete(event, description) {

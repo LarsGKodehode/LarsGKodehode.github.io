@@ -23,17 +23,7 @@ body {
   background-color: darkgray;
 }
 
-body > div {
-  min-width: 100%;
-  min-height: 100%;
-
-  box-sizing: border-box;
-  margin: 1em;
-
-  background-color: darkkhaki;
-}
-
-.quadrant {
+#target-cards {
   display: flex;
   justify-content: center;
   align-items: center;

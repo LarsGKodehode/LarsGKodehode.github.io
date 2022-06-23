@@ -134,6 +134,17 @@ li {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.75);
 }
 
+/* tooltip */
+.list-element-wrapper:hover::after {
+  position: absolute;
+  top: 100%;
+  width: 100vw;
+  width: 50%;
+  height: 50%;
+  background-color: red;
+  content: attr(data-parent);
+}
+
 .texts-wrapper {
  display: flex;
  flex-direction: column;

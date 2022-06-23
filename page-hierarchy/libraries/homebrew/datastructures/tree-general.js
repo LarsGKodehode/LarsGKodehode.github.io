@@ -2,12 +2,11 @@ class TreeNode {
   constructor(data) {
     this.data = data;
     this.parent = null;
-    this.#children = [];
   };
   
   #data;
   #parent;
-  #children;
+  #children = [];
 
   addChild(node) {};
   removeAllChildren() {};
@@ -30,6 +29,9 @@ class TreeNode {
   };
 
   set children(node) {
+    if (this.parent === null && ) {
+      this.#children = [];
+    };
     if (node instanceof TreeNode) {
       this.#children[this.#children.length] = node;
     };

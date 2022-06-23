@@ -59,13 +59,13 @@ function randomon() {
 };
 
 // where to attach
-const target1 = document.getElementById("target-1");
+const targetCards = document.getElementById("target-cards");
 // number of pokemons in pokemonapi.com
 const pokemonNumber = 905
 // number of card to create
-const population = 2;
+const population = 1;
 
 
 for (let i = 0; i < population; i++) {
-  fetchPokemon(randomon(), target1);
+  fetchPokemon(randomon(), targetCards);
 }

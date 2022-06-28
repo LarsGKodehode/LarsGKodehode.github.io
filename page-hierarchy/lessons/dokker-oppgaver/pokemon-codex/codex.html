@@ -3,18 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Poke Codex</title>
+  <title>Pokemon Codex</title>
 
   <link rel="stylesheet" href="codex.css">
 
   <link rel="icon" href="/content/icon/icon-original.svg">
 
   <!-- <script defer src="test-bench.js"></script> -->
-  <script defer src="codex.js"></script>
+  <script defer src="codex-gamma.js" type="module"></script>
 </head>
 <body>
 
-  <div id="target-cards"></div>
-  
+  <div id="app-wrapper"></div>
+
+  <nav id="DEV-GUI">
+    <input type="button" id="button-refresh" value="Refresh">
+    <input type="button" id="button-create-gui" value="Create GUI">
+    <input type="button" id="button-delete-cards" value="Delete Cards">
+  </nav>
+
 </body>
 </html>

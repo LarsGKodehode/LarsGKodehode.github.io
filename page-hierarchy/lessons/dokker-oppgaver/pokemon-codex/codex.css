@@ -1,3 +1,4 @@
+/* ================ global settings ================ */
 html {
   box-sizing: border-box;
 
@@ -10,35 +11,65 @@ html {
 body {
   box-sizing: border-box;
 
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 1em;
+  width: 100%;
+  height: 100%;
 
-  width: calc(100% - 2em);
-  height: calc(100% - 2em);
-
-  margin: 0px;
+  margin: 0;
 
   background-color: darkgray;
+  background-image: url(/content/img/planets.png);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+
 }
 
-#target-cards {
+/* ================== app wrapper ================== */
+#app-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
+  width: 100%;
+  height: 95%;
+
   box-sizing: border-box;
 
-  padding: 0 10%;
-
-  overflow-x: auto;
+  padding: 0;
 }
 
-.pokecard {
-  width: fit-content;
+/* ================= cards wrapper ================= */
+/* #gui-cards {
+  display: inline-flex;
+  overflow-x: scroll;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+
+  width: 100%;
   height: 80%;
+} */
+
+#gui-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 4em;
+}
+
+/* ===================== cards ===================== */
+.pokemon-card {
+  grid-column: auto;
+  grid-row: auto;
+
+  width: 100%;
+  height: fit-content;
   padding: 1em;
+
+  box-sizing: border-box;
+
 
   border: 2px solid rgb(85, 84, 84);
   border-radius: 10px;
@@ -46,6 +77,48 @@ body {
   box-shadow: .25em .25em .25em .25em rgba(0, 0, 0, 0.25);
 }
 
-.pokecard:hover {
+.pokemon-card:hover {
   border: solid 2px white;
+}
+
+/* top part */
+.pokemon-card > .top {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+/* mid part */
+.pokemon-card > .middle {
+  width: 100%;
+
+  border: solid 4px gold;
+  border-radius: 20px;
+}
+
+
+/* fancy decorations */
+.glass.plane { /* don't try figuring this out in here, use external tools */
+  /* glassy gradients */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  linear-gradient(55deg, rgba(119, 69, 69, 0) 21.7%, rgba(196, 169, 169, 0.335) 45.34%, rgba(255, 254, 254, 0.335) 52.23%, rgba(196, 169, 169, 0.335) 58.64%, rgba(119, 69, 69, 0) 79.81%),
+  linear-gradient(154.39deg, rgba(255, 255, 255, 0.2) -0.28%, rgba(255, 255, 255, 0) 13.82%, rgba(255, 255, 255, 0) 76.5%, rgba(255, 255, 255, 0.2) 100%),
+  linear-gradient(0deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09));
+
+  /* special stuff */
+  backdrop-filter: blur(8px);
+}
+
+.glass.image {
+  opacity: 80%;
+}
+
+/* DEV TOOLING */
+#DEV-GUI {
+  position: fixed;
+  right: 0;
+  top: 30%;
+
+  display: flex;
+  flex-direction: column;
 }
